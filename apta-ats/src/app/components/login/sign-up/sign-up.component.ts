@@ -22,7 +22,7 @@ export class SignUpComponent implements OnInit {
         signIn_type: 'manager',
         email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
         password: ['', [Validators.required, Validators.minLength(6)]],
-        name: '',
+        name: ['', [Validators.required]],
       });
     }
     get form() {
