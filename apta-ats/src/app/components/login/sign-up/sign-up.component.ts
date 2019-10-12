@@ -12,7 +12,6 @@ export class SignUpComponent implements OnInit {
   submitted = false;
     constructor(private router: Router,
                 private fb: FormBuilder) { }
-  
     ngOnInit() {
       this.inItForm();
     }
@@ -30,7 +29,6 @@ export class SignUpComponent implements OnInit {
     }
     onSubmit() {
       this.submitted = true;
-  
       // stop here if form is invalid
       if (this.signInForm.invalid) {
           return;
