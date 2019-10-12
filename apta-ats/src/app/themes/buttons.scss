@@ -1,0 +1,13 @@
+.btn-press {
+    &:hover {
+        box-shadow: 0px 15px 25px -5px rgba(#aaaaaa, 40%);
+        transform: scale(1.03)
+        }
+        &:active {
+        box-shadow: 0px 4px 8px rgba(#aaaaaa, 30%);
+        transform: scale(.98)
+        }
+}
+.outline-none:focus {
+    outline: none;
+}

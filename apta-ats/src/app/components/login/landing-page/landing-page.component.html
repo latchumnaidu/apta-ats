@@ -1,0 +1,145 @@
+<div class="overflow-hidden position-relative">
+<!-- <nav class="navbar navbar-light nav_menu position-absolute" [ngClass] = "{'bg-nav_menu' : feedback}">
+    <div class="row w-100 justify-content-between align-items-center">
+        <h3 class="d-flex align-items-center pointer" (click) = "feedback = false">
+            <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
+        </h3>
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="nav-btns text-center" [ngClass]="{'nav-btns_active': signIn}" (click)="signInPage()">Sign In</span>
+            <span class="nav-btns text-center" [ngClass]="{'nav-btns_active': signUp}" (click)="signUpPage()">Sign Up</span>
+        </div>
+    </div>
+</nav> -->
+<div >
+        <ngb-carousel>
+                <ng-template ngbSlide>
+                    <div class="position-relative">
+                        <img src="../../../../assets/slide1.png" class="img-fluid main-img">
+                        <div class="position-absolute slide1">
+                            <h3 class="slide1_heading_1">Reinvent Recruitment and Hiring using </h3>
+                            <h2 class="slide1_heading_2 text-center">Machine Learning</h2>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="position-relative">
+                        <img src="../../../../assets/slide2.png" class="img-fluid main-img">
+                        <div class="position-absolute slide2">
+                            <h3 class="slide2_heading_1">Quick Evaluate with <span class="slide2_heading_2">360 view</span> on profiles</h3>
+                            <h2 class="slide2_heading_1 text-center">Using our Tracking System</h2>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="position-relative">
+                        <img src="../../../../assets/slide3.png" class="img-fluid main-img">
+                        <div class="position-absolute slide3">
+                            <h3 class="slide3_heading_1">Make a right skilled resources</h3>
+                            <h2 class="slide3_heading_1 text-center">with our <span class="slide3_heading_2">Machine Learning
+                                    analysis</span></h2>
+                        </div>
+                    </div>
+                </ng-template>
+                <ng-template ngbSlide>
+                    <div class="position-relative">
+                        <img src="../../../../assets/slide4.png" class="img-fluid main-img">
+                        <div class="position-absolute slide4">
+                            <h3 class="slide4_heading_1">Bulk Sreening </h3>
+                            <h2 class="slide4_heading_2 text-center">In Seconds</h2>
+                        </div>
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+            <div class="row m-t-n-70">
+                <div class="col-lg-7 col-md-8 col-sm-9 text-center h-450 ">
+                    <div class="position-relative">
+                        <div class="position-absolute main-circle">
+                            <img src="../../../../assets/main-circle.png" alt="">
+                            <div class="position-absolute main-circle_text">
+                                <h6 class="circle-text_head1">Apta <span class="circle-text_head2">ATS</span></h6>
+                            </div>
+                        </div>
+                        <div class=" circle-1 position-absolute ">
+                            <img src="../../../../assets/sub-circle.png" alt="">
+                            <div class="position-absolute text-white circle-text">
+                                <h6>Screening</h6>
+                                <h6>Profiles</h6>
+                            </div>
+                        </div>
+                        <div class=" circle-2 position-absolute ">
+                            <img src="../../../../assets/sub-circle.png" alt="">
+                            <div class="position-absolute text-white circle-text">
+                                <h6>Quick</h6>
+                                <h6>Compare</h6>
+                            </div>
+                        </div>
+                        <div class=" circle-3 position-absolute ">
+                            <img src="../../../../assets/sub-circle.png" alt="">
+                            <div class="position-absolute text-white circle-text">
+                                <h6>360 view </h6>
+                                <h6>on profiels</h6>
+                            </div>
+                        </div>
+                        <div class=" circle-4 position-absolute ">
+                            <img src="../../../../assets/sub-circle.png" alt="">
+                            <div class="position-absolute text-white circle-text">
+                                <h6>Manage CV</h6>
+                                <h6>Database</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-4 col-sm-3 d-flex align-items-center justify-content-center h-400">
+                    <div class="signIn-text">
+            
+                        <p>Post a job</p>
+                        <p>Recieve Applications</p>
+                        <p>Screen profiels with</p>
+                        <p>
+                            <button class="sign-in btn-press" (click)="signInPage()">Sign In</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="h-85">
+            
+                <div class="position-absolute talkto pointer" (click)="openVerticallyCentered(content)">
+                    <img src="../../../../assets/talkto-proffe.png" class="h-65">
+                    <div class="position-absolute talkto-text">Talk to our Professionals</div>
+                </div>
+            </div>
+            <ng-template #content let-modal>
+                    <div class="modal-header modal-header-bg">
+                        <div class="d-flex">
+                            <div class="main d-flex justify-content-center align-items-center">
+                                <div class="sub d-flex justify-content-center align-items-center">
+                                    A
+                                </div>
+                            </div>
+                            <div class="modal-title p-l" id="exampleModalLongTitle"> 
+                                 <h5>How may I help you?</h5>      
+                                 <h6>Let us know what you are looking for</h6>
+                             </div>
+                        </div>
+                      <button type="button" class="close outline-none btn-press" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                            <textarea class="form-control h-85" placeholder="Type..."></textarea>
+                    </div>
+                    <div class="modal-footer border-top-0">
+                      <button type="button" class="sign-in" (click)="modal.close('Close click')">Send</button>
+                    </div>
+                  </ng-template>
+</div>
+
+<div class="position-relative">
+    <img src="../../../../assets/footer-img.png" class="img-fluid footer-img">
+    <div class="position-absolute footer-text">
+        <h6 class="footer-text_h6">Aptagrim </h6>
+        <span>@2019. All Rights Reserved</span>
+    </div>
+</div>
+</div>

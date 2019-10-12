@@ -1,0 +1,56 @@
+// .bg-img {
+//     background-image: url("/assets/Pricing Background.jpg");
+// }
+.pricing-btn {
+    width: 120px;
+    height: 60px;
+    border: 1px solid #107A83 !important;
+    border-radius: 25px !important;
+    background-color: #107A83 !important;
+    color: white !important;
+}
+.free-card {
+    background: #9DE3E9;
+    color: black;
+}
+.standard-card {
+    background: 	#1FA2B4
+}
+.standard-text {
+    color: rgba(0,0,0,0.5) !important;
+}
+.card-text {
+    color: #4D959F;
+    font-size: 30px;
+}
+mat-card {
+    height: 350px;
+    width: 225px;
+    border-radius: 30px;
+}
+.h-560 {
+    min-height: 560px;
+}
+.h-300 {
+    height: 300px;
+}
+.h-270 {
+    height: 160px;
+}
+.bottom-img {
+    bottom: 0;
+}
+.wave {
+    opacity: 0.96;
+}
+.bottom-btns {
+    z-index: 1;
+    bottom: 30px;
+}
+.btn {
+    border-radius: 1.25rem;
+    border: 1px solid white;
+    background-color: white;
+    color: #1db2c6;
+    font-weight: 700;
+}

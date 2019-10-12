@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0;  font-family: Raleway; }
+* {
+    font-family:  comfortaa, century gothic;
+      // font-family: proxima-nova,helvetica,arial,sans-serif;
+    // font-family: BhrHeaderFont,Trebuchet MS,sans-serif;
+    // font-family: brandon,Arial,Helvetica Neue,Helvetica,sans-serif;
+}
+@import '../src/app/themes/margins.scss';
+@import '../src/app/themes/padding.scss';
+@import '../src/app/themes/fonts.scss';
+@import '../src/app/themes/utilities.scss';
+@import '../src/app/themes/borders.scss';
+@import '../src/app/themes/buttons.scss';
+@import '../src/app/themes/inputs.scss';

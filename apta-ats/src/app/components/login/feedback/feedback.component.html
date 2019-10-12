@@ -1,0 +1,35 @@
+<div>
+        <!-- <div class="position-absolute feedback-bgImg">
+                <img src="../../../assets/feedback-logo2.png" alt="">
+            </div> -->
+<div style="margin-top: 75px;">
+        <div class="text-center"> <img src="../../../../assets/feedback-logo1.png" alt=""> </div>
+    <h4 class="text-center m-b-md">Your Experience with Apta ATS</h4>
+    <div class="d-flex">
+        <div class="col-sm-4 d-flex align-items-center justify-content-end">
+                     <mat-radio-group aria-label="Select an option" [(ngModel)] = "feedbackType">
+                        <mat-radio-button value="Bug" class="d-block">Bug</mat-radio-button>
+                        <mat-radio-button value="Suggetion" class="d-block">Suggetion</mat-radio-button>
+                      </mat-radio-group>
+        </div>
+        <div class="col-sm-7">
+                <div class="card text-center bg-card">
+                        <div class="card-body body-height">
+                            <div class="d-flex align-items-center" *ngIf = "feedbackType === 'Bug'">
+                                <div class=" col-sm-3 text-left text-white p-l-r-sm">Type of Bug</div>
+                                <div class="col-sm-6 p-l-r-sm"><input type="text" placeholder="Type..." class="bugType w-100" ></div>
+                            </div>
+                                    <div class="text-left col-sm-12 text-white p-l-r-sm">Comment</div>
+                                    <p class="text-left col-sm-9 p-l-r-sm"><textarea class="bugType w-100" placeholder="Type..." ></textarea></p>
+                        </div>
+                        <div class="card-footer border-top-0">
+                                <button class="sign-in btn-press ">Submit</button>
+                        </div>
+                      </div>
+        </div>
+    </div>
+<div class="text-center">
+    <img src="../../../../assets/feedback-logo2.png" >
+</div>
+</div>
+</div>

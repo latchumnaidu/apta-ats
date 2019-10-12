@@ -1,0 +1,237 @@
+.h-370 {
+    height: 370px;
+}
+.tracking-img-text {
+    top: -27px;
+    right: 6%;
+    color: #345051;
+    font-weight: 600;
+    font-size: 29px;
+}
+.h-750 {
+    height: 750px;
+}
+.m-h-400 {
+    min-height: 400px;
+}
+.post-job-text1 {
+    top: 85px;
+    left: 2%;
+    color: white;
+    font-size: 50px;
+    /* font-family: comic sans ms; */
+}
+.screening-img {
+    height: 300px;
+    transform: rotate(327deg);
+}
+.screening-hand {
+    top: 21%;
+    height: 105px;
+}
+.screening-hand-text {
+    color: white;
+    top: 33%;
+    right: 8%;
+    font-size: 30px;
+}
+.m-l-30 {
+    margin-left: 40px;
+}
+.m-t-50 {
+    margin-top: 50px;
+}
+.m-t-n-100 {
+    margin-top: -100px;
+}
+.m-t-n-150 {
+    margin-top: -150px;
+}
+.m-t-30 {
+    margin-top: 30px;
+}
+.h-580 {
+    min-height: 580px;
+}
+.h-450 {
+    height: 450px;
+}
+.f-s-20 {
+    font-size: 20px !important;
+}
+.main-circle {
+    border: 4px solid #47ebfa;
+    height: 140px;
+    width: 140px;
+    border-radius: 50%;
+    box-shadow: -12px 4px 12px #aaaaaa;
+}
+.sub-circles {
+    border: 1px solid #aaaaaa;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    color: #47ebfa;
+    font-size: 12px;
+    /* font-family: cursive; */
+}
+.apta-color {
+    color: #47ebfa;
+}
+.circle-1 {
+    top: 100px;
+    left: 15%;
+    box-shadow: 7px 1px 5px #aaaaaa;
+}
+.circle-2 {
+    top: 180px;
+    left: 30%;
+    box-shadow: 7px 4px 5px #aaaaaa;
+}
+.circle-3 {
+    top: 212px;
+    left: 51%;
+    box-shadow: 7px -3px 5px #aaaaaa;
+}
+.circle-4 {
+    top: 150px;
+    left: 71%;
+    box-shadow: -7px -2px 5px #aaaaaa;
+}
+.hiring-circle-text {
+    border: 4px solid #47ebfa;
+    box-shadow: -7px -2px 5px #aaaaaa;
+    height: 482px;
+    width: 100%;
+    border-radius: 50%;
+    right: -104px;
+}
+.hiring-inner-text {
+    top: 85px;
+    right: 10%;
+    left: 21%;
+}
+.hiring-process-btn {
+    background-color: #47ebfa;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    font-size: large;
+}
+.hiring-signin {
+    border-radius: 20px;
+    color: #47ebfa;
+    box-shadow: 0px 0px 10px 4px #aaaaaa, inset 0 0 11px 2px #aaaaaa;
+    /* font-family: century gothic; */
+    font-size: 20px;
+    border: 2px solid gray;
+    /* border: 3px solid #365253; */
+}
+.h-400 {
+    height: 400px;
+}
+.w-118 {
+    width: 149px;
+    height: 3rem;
+    border-radius: 25px;
+}
+.w-100px {
+    width:100px;
+}
+.robot-img {
+    height: 30px;
+    width: 40px;
+}
+.robot-text{
+    border: 1px solid lightgray;
+    border-top-left-radius: 45px;
+    border-bottom-left-radius: 45px;
+    height: 50px;
+    background: lightgray;
+    color: #345051;
+}
+.login-bubble {
+    color: white;
+    top: 24%;
+    left: 5%;
+    font-size: 32px;
+}
+.signup-bubble {
+    color: white;
+    top: 27%;
+    left: 20%;
+    font-size: 20px;
+}
+.login-bubble-img {
+    margin-top: -50px;
+    padding-bottom: 50px;
+}
+.checkmark {
+    height: 50px;
+    width: 50px;
+}
+.check-inner-circle {
+    height: 160px;
+    width: 117px;
+    border-radius: 60px;
+    box-shadow: 3px 6px 9px 3px #6FCBD8
+}
+.check-circle {
+    border: 4px solid #6FCBD8;
+    border-radius: 80px;
+    width: 50;
+    height: 215px;
+    width: 165px;
+}
+.h-300 {
+    height: 300px;
+}
+.h-150 {
+    height: 86px;
+}
+.dashboard-img {
+    top: 80px;
+    left: 44%;
+}
+.dashboard-text {
+    top: 100px;
+    left: 46%;
+}
+.dashboard-circle {
+    border: 1px solid #47ebfa;
+    height: 130px;
+    width: 106px;
+    border-radius: 50%;
+    background: #47ebfa;
+    position: absolute;
+    right: -50px;
+    top: 16px;
+}
+.m-l-sm {
+    margin-left: 10px;
+}
+.m-t-n-20 {
+    margin-top: -20px;
+}
+.heading-text {
+    color: #365253;
+    font-size: 40px;
+    /* font-family: Arial, Helvetica, sans-serif; */
+}
+.heading-strong {
+    color: #137377;
+}
+
+.apta-rec {
+    color: #6f7271;
+    /* font-family: berlin sans FB; */
+    font-size: 46px;
+    font-weight: 400;
+}
+.get-into {
+    color: #7e8784;
+    font-size: 60px;
+}
+.hiring-process {
+    color: #7e8784;
+}

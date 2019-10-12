@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="d-none d-sm-none d-md-block d-lg-block col-md-7 col-lg-7">
+        <img src="../../../assets/contact.jpg" class="h-560 w-100">
+    </div>
+    <div class="col-12 col-sm-12 col-md-5 col-lg-5 d-flex justify-content-center align-items-center">
+        <div class="col-10 m-t-md">
+                <form [formGroup]="contactForm" #formDir = "ngForm" (ngSubmit)="onSubmit()">
+
+                        <label for="name">Full Name</label>
+                        <input  id="name" formControlName="name" [ngClass]="{'border-red': submitted && f.name.errors}">
+                        <div *ngIf="submitted && contactForm.controls['name'].invalid"
+                        class="text-red m-t-sm">* This field is required</div>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" formControlName="email" [ngClass]="{'border-red': submitted && f.email.errors}">
+                        <div *ngIf="submitted && f.email.errors" class="text-red">
+                                <div *ngIf="f.email.errors.required">* This field is required</div>
+                                <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+                            </div>
+
+                        <label for="contact">Contact Number</label>
+                        <input type="number" id="contact" formControlName="contact" class="input-no-arrows" [ngClass]="{'border-red': submitted && f.contact.errors}">
+                        <div *ngIf="submitted && contactForm.controls['contact'].invalid"
+                        class="text-red m-t-sm">* This field is required</div>
+
+                        <label for="Subject">Subject</label>
+                        <input  id="Subject" formControlName="subject" [ngClass]="{'border-red': submitted && f.subject.errors}">
+                        <div *ngIf="submitted && contactForm.controls['subject'].invalid"
+                        class="text-red m-t-sm">* This field is required</div>
+
+                        <label for="message">Message</label>
+                        <textarea  id="message" class="w-100" formControlName="message" [ngClass]="{'border-err ': submitted && f.message.errors}"></textarea>
+                        <div *ngIf="submitted && contactForm.controls['message'].invalid"
+                        class="text-red m-t-sm">* This field is required</div>
+
+                        <p class="text-center w-100"> <button class="form-control color-ats form-rounded 
+                          m-t-sm btn-press  d-inline-block submit" type="submit">Submit</button> </p>
+                </form> 
+        </div> 
+    </div>
+</div>

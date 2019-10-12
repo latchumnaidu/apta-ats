@@ -1,0 +1,62 @@
+<div class="overflow-hidden position-relative min-h">
+        <div class="container-fluid" style="margin-top:75px">
+            <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                    <div class="col-sm-8 offset-sm-4 m-t-xl">
+                        <mat-radio-group aria-label="Select an option" formControlName="signIn_type">
+                            <mat-radio-button value="manager" class="m-r">Sign Up as Hiring Manager</mat-radio-button>
+                            <mat-radio-button value="internal" class="m-r">Sign Up as Internal Recruiter</mat-radio-button>
+                            <mat-radio-button value="external" class="m-r">Sign Up as External Recruiter</mat-radio-button>
+                        </mat-radio-group>
+                        <div class="input-group mb-3 m-t-sm w-50">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text color-ats" id="basic-addon1">Full Name:</span>
+                                </div>
+                                <input type="email" class="form-control b-l-0" formControlName="name" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                                </div>
+                                    <div *ngIf="submitted && form.name.errors" class="text-red text-left m-t-n-sm">
+                                        <div *ngIf="form.name.errors.required">* This field is required</div>
+                                    </div>
+                        <div class="input-group mb-3 m-t-sm w-50">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text color-ats" id="basic-addon1">Email:</span>
+                                </div>
+                                <input type="email" class="form-control b-l-0" formControlName="email" aria-label="Username"
+                                    aria-describedby="basic-addon1">
+                                </div>
+                                    <div *ngIf="submitted && form.email.errors" class="text-red text-left m-t-n-sm">
+                                        <div *ngIf="form.email.errors.required">* This field is required</div>
+                                        <div *ngIf="form.email.errors.email">Email must be a valid email address</div>
+                                    </div>
+                            
+                            <div class="input-group mb-3 m-t-sm w-50">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text color-ats" id="basic-addon2">Creat Password:</span>
+                                </div>
+                                <input type="password" class="form-control b-l-0" formControlName="password" aria-label="Username"
+                                    aria-describedby="basic-addon2">
+                                </div>
+                                    <div *ngIf="submitted && form.password.errors" class="text-red text-left m-t-n-sm">
+                                        <div *ngIf="form.password.errors.required">* This field is required</div>
+                                        <div *ngIf="form.password.errors.minlength">Password must be at least 6 characters</div>
+                                    </div>
+                                    <div class="input-group mb-3 m-t-sm-w-50 m-l-sm">
+                                            <mat-checkbox>Save Credentials in my Email</mat-checkbox>
+                                    </div>
+    
+                            <div class="w-50 mb-3 d-flex  align-items-center">
+                                 <button type="submit"  class="form-control color-ats form-rounded btn-press d-inline-block submit">Submit</button> 
+                                <span class="seperator "> | </span>
+                                <button  class="form-control form-rounded  google-signin color-ats btn-press">Sign Up With
+                                    <img src="../../../../assets/google_icon-icons.com_62736.ico" class="height-25 m-l m-r-sm">
+                                </button> 
+                            </div>
+                    </div>
+                </div>
+                    <div class="position-absolute login-img">
+                        <img src="../../../../assets/login-img.png" class="login-img_height">
+                    </div>
+            </form>
+        </div>
+    </div>
