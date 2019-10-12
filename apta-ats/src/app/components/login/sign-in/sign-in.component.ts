@@ -40,4 +40,7 @@ submitted = false;
         return;
     }
   }
+  loginAs() {
+    this.router.navigate(['./admin']);
+  }
 }

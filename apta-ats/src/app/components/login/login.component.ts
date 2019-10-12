@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit() {
+    sessionStorage.setItem('feedback', '');
     this.subscription = this.dataShare.dataSubject.subscribe(res => {
       //   this.feedback = res;
       if (res) {

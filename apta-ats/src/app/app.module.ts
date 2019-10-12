@@ -11,7 +11,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { RouterModule } from '@angular/router';
 import { PricingComponent } from './components/pricing/pricing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DemoMaterialModule } from './material-module';
 @NgModule({
   declarations: [

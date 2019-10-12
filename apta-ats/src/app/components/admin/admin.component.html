@@ -1,0 +1,73 @@
+<div class="overflow-hidden ">
+    <nav class="navbar navbar-light p-l-r-0 nav_menu bg-nav_menu fixed-top">
+        <div class="d-flex w-100 justify-content-between align-items-center">
+            <h3 class="d-flex p-l-r-10 align-items-center pointer" (click)="landingPage()">
+                <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
+            </h3>
+            <div class="col-sm-2 p-l-r-0 d-flex justify-content-around align-items-center m-r-n text-white">
+                <mat-icon matBadge="22" matBadgePosition="above after">email</mat-icon>
+                <mat-icon>home</mat-icon>
+                <mat-icon matBadge="10" matBadgePosition="above after">notifications</mat-icon>
+                <mat-icon>account_circle</mat-icon>
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                        <mat-icon>dialpad</mat-icon>
+                        <span>Redial</span>
+                    </button>
+                    <button mat-menu-item disabled>
+                        <mat-icon>voicemail</mat-icon>
+                        <span>Check voice mail</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>notifications_off</mat-icon>
+                        <span>Disable alerts</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <div class="d-flex w-100 justify-content-between align-items-center p-l-r-10 m-t-md m-b-xs">
+            <div class="col-sm-2 text-white admin-text">
+                <div class="admin-text_1">Naveen Reddy Sagha</div>
+                <div class="admin-text_2">Member of Aptagrim</div>
+                <p class="admin-text_2">Admin</p>
+            </div>
+            <div class="col-sm-2 text-center ">
+                <span class="date-text d-block m-b-n-sm">{{dateMonth.month}}</span>
+                <span class="date-text">{{dateMonth.date}}</span>
+            </div>
+            <div class="col-sm-8 d-flex justify-content-between align-items-center">
+                <div class="card admin-cards">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">New Subscriptions</h5>
+                    </div>
+                </div>
+                <div class="card admin-cards">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Feedback</h5>
+                    </div>
+                </div>
+                <div class="card admin-cards">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Hot Visitors</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light p-l-r-0 second_nav  fixed-top" style="top:165px">
+        <div class="d-flex w-100 p-l-r-10 justify-content-between align-items-center">
+            <span>Users</span>
+            <span>Feedback</span>
+            <span>Subscription Plans</span>
+            <span>Hot Visitors</span>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+    <div class="footer-text">
+        <h6 class="footer-text_h6">Aptagrim </h6>
+        <span class="footer-text_span">@2019. All Rights Reserved</span>
+    </div>
+</div>

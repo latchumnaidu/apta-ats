@@ -127,11 +127,16 @@ ngb-carousel:focus {
     height: 100px;
 }
 .footer-text {
-    top: 23px;
-    left: 10px;
     color: #FFFFFF;
+    padding-top: 10px;
+    padding-left: 10PX;
+    background: #383838;
     &_h6 {
-        font-size: 24px;
+        font-size: 23px;
+        margin-bottom: 0px;;
+    }
+    &_span {
+        font-size: 12px;
     }
 }
 .h-400 {
