@@ -5,3 +5,17 @@
 .border-err {
     border: 1px solid red;
 }
+.fixed-top {
+    z-index: 1029 !important;
+}
+.z-index-high {
+    z-index: 9999 !important;
+}
+.dot-menu-btn {
+    background: none;
+    outline: none;
+  }
+  .mat-menu-item:focus {
+    outline: none;
+    border: none;
+  }

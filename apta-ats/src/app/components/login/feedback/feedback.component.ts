@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./feedback.component.scss']
 })
 export class FeedbackComponent implements OnInit {
-  feedbackType = 'Bug'
+  feedbackType = 'Bug';
   constructor() { }
 
   ngOnInit() {

@@ -1,0 +1,27 @@
+@import '../dashboard/dashboard.component.scss';
+.w-200 {
+    width: 200px;
+}
+.subscription-head {
+    font-size: 30px;
+    margin-bottom: 0;
+}
+.subscription-text {
+    font-size: 40px;
+    font-weight: bold;
+    color: white !important;
+}
+.subscribe {
+    border: 1px solid #424242;
+    background: #424242;
+    color: white;
+    border-radius: 6px;
+    padding: 2px 15px;
+}
+.subscription_sub p {
+    font-size: 16px;
+    color: #8b8181;
+    font-weight: 600;
+    margin-bottom: inherit;
+    padding-left: 0;
+}

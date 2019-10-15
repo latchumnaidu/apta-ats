@@ -1,29 +1,38 @@
 <div class="overflow-hidden ">
-    <nav class="navbar navbar-light p-l-r-0 nav_menu bg-nav_menu fixed-top">
+    <nav class="navbar navbar-light p-l-r-0 nav_menu bg-nav_menu fixed-top ">
         <div class="d-flex w-100 justify-content-between align-items-center">
             <h3 class="d-flex p-l-r-10 align-items-center pointer" (click)="landingPage()">
                 <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
             </h3>
             <div class="col-sm-2 p-l-r-0 d-flex justify-content-around align-items-center m-r-n text-white">
                 <mat-icon matBadge="22" matBadgePosition="above after">email</mat-icon>
-                <mat-icon>home</mat-icon>
+                <mat-icon (click)="home()">home</mat-icon>
                 <mat-icon matBadge="10" matBadgePosition="above after">notifications</mat-icon>
-                <mat-icon>account_circle</mat-icon>
-                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <mat-icon class="m-l-sm">account_circle</mat-icon>
+                <button mat-icon-button [matMenuTriggerFor]="menu" class="outline-none"
+                 aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
-                <mat-menu #menu="matMenu">
-                    <button mat-menu-item>
-                        <mat-icon>dialpad</mat-icon>
-                        <span>Redial</span>
+                <mat-menu #menu="matMenu" class="z-index-high">
+                    <button mat-menu-item class="dot-menu-btn">
+                        <mat-icon>insert_drive_file</mat-icon>
+                        <span>Templates</span>
                     </button>
-                    <button mat-menu-item disabled>
-                        <mat-icon>voicemail</mat-icon>
-                        <span>Check voice mail</span>
+                    <button mat-menu-item class="dot-menu-btn" (click)="settings()">
+                        <mat-icon>settings</mat-icon>
+                        <span>Settings</span>
                     </button>
-                    <button mat-menu-item>
-                        <mat-icon>notifications_off</mat-icon>
-                        <span>Disable alerts</span>
+                    <button mat-menu-item class="dot-menu-btn">
+                        <mat-icon>lock</mat-icon>
+                        <span>Privacy Policy</span>
+                    </button>
+                    <button mat-menu-item class="dot-menu-btn">
+                        <mat-icon>description</mat-icon>
+                        <span>Terms and Conditions</span>
+                    </button>
+                    <button mat-menu-item class="dot-menu-btn">
+                        <mat-icon>power_settings_new</mat-icon>
+                        <span>Sign Out</span>
                     </button>
                 </mat-menu>
             </div>
@@ -57,7 +66,7 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-light p-l-r-0 second_nav  fixed-top" style="top:165px">
+    <nav class="p-l-r-0 second_nav" style="margin-top:165px">
         <div class="d-flex w-100 p-l-r-10 justify-content-between align-items-center">
             <span>Users</span>
             <span>Feedback</span>
@@ -65,7 +74,10 @@
             <span>Hot Visitors</span>
         </div>
     </nav>
-    <router-outlet></router-outlet>
+    <div class="min-height">
+
+        <router-outlet></router-outlet>
+    </div>
     <div class="footer-text">
         <h6 class="footer-text_h6">Aptagrim </h6>
         <span class="footer-text_span">@2019. All Rights Reserved</span>

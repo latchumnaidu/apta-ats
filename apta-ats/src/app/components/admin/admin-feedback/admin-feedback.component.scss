@@ -1,0 +1,35 @@
+.body-height {
+    height: 210px;
+}
+::ng-deep.mat-radio-outer-circle {
+    border-color: #707070;
+}
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: #707070;
+    border-radius: 5px;;
+  }
+.bugType {
+    padding: 16px!important;
+    border: none;
+    border-radius: 0;
+    color: #e1e1e1;
+    background-color: #474747;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.bugType:focus {
+  outline:none;
+}
+.bugType::placeholder {
+    color: #e1e1e1;
+}
+.bg-card {
+    background: #707070;
+    max-width: 500px;
+}
+.feedback-bgImg {
+    opacity: .1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

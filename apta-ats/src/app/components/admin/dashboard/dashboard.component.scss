@@ -3,8 +3,131 @@
     color: #363B3C;
     &_1 {
         font-size: 22px;
+        padding-left: 5px;
     }
 }
 .m-t-dash {
-    margin-top: 230px;
+    margin-top: 20px;
 }
+.profile-margin {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.profile_icon {
+    // border: 1px solid #707070;
+    box-shadow: 0px 4px 6px 1px rgba(97, 95, 95, 0.85);
+    color: #353F41;
+    font-size: 30px;
+    height: 105px;
+    width: 105px;
+    border-radius: 50%;
+    padding: 10px;
+    mat-icon {
+        font-size: 80px;
+    }
+    &_sub {
+        border: 1px solid #707070;
+        box-shadow: 0px 4px 6px -2px rgba(97,95,95,.85);
+        color: #353F41;
+        font-size: 10px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 9px 9px;
+        background: white;
+        bottom: 9px;
+        right: -15px;
+        mat-icon {
+            font-size: 22px;
+        }
+    }
+}
+//file upload css
+.custom-button {
+    padding: 1px 15px;
+    color: white;
+    background-color: #353E40;
+    border: 1px solid #353E40;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+  .custom-button:focus {
+      outline: none;
+  }
+  .file_upload {
+    background-color:#FFFFFF;
+    // border: 1px solid #707070;
+    width: 330px;
+    padding: 4px 10px;
+    border-radius: 19px;
+    box-shadow: 0px 0px 4px rgba(97, 95, 95, 0.85);
+  }
+  #custom-text {
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: #aaa;
+  }
+  ////
+  .form-rounded {
+    border: 1px solid #707070;
+  }
+  .p-2 {
+      padding: 2px !important;
+  }
+  .form-control {
+    border-radius: 1.25rem;
+    border: 1px solid #707070;
+    height: auto;
+  }
+  .google-signin {
+    width: 46%;
+    font-size: 20px;
+    box-shadow: 0px 0px 10px 4px #aaaaaa;
+  }
+  .input-group-text { 
+    background-color: white;
+    border-radius: 1.25rem;
+    border: 1px solid #707070;
+  }
+  mat-radio-button {
+      margin-right: 10px;
+  }
+  .password-box {
+    border: 1px solid #707070;
+    color: #363B3C;
+    padding: 30px;
+    padding-top: 10px;
+    margin-bottom: 15px;
+    &_heading {
+        font-size: 25px;
+    }
+    &_subheading {
+        font-size: 15px;
+    }
+  }
+  .subscription p{
+      color: #383838;
+      font-size: 30px;
+  }
+  .subscription span{
+    font-size: 25px;
+    color: #726b6b;
+}
+.subscription_sub p{
+    margin-bottom: 0px;
+    font-size: 25px;
+    padding-left: 30px;
+}
+.subscription_sub span{
+    font-size: 20px;
+    color: #726b6b;
+}
+  .validation {
+      background-color: #383838;
+      border: 1px solid #383838;
+      border-radius: 6px;
+      color: white;
+      padding: 10px;
+      font-size: 15px;
+      cursor: pointer;
+  }

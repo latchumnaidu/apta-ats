@@ -1,0 +1,29 @@
+<div class="conrtainer-fluid p-l-r-0 m-t-dash">
+    <form [formGroup]="adminSettingsForm" (ngSubmit)="onSubmit()">
+        <div class=" p-l-xxl">
+            <p style="font-size: 27px;">Account Settings</p>
+            <p style="font-size: 22px;">Credentials</p>
+            <div class="credentials">
+                <div class="d-flex justify-content-between">
+                    <h2 style="font-size: 25px;">Email: <span>abcd@gmail.com</span></h2>
+                    <button class="custom-button" >Change</button>
+                </div>
+                <div class="d-flex justify-content-between">
+                        <h2 style="font-size: 25px;">Password: <span>.......</span></h2>
+                        <button class="custom-button" >Change</button>
+                    </div>
+            </div>
+            <p style="font-size: 22px;" class="m-t-sm">Job Boards</p>
+            <button class="custom-button" >Add Free Job Boards</button>
+            <div class="d-flex justify-content-between w-30 m-t-sm">
+                <h6>You have Registered 23 Job Boards</h6>
+                 <h6> <span class="jobBoard-btns-edit">Edit</span> <span class="jobBoard-btns">Add</span></h6>
+                </div>
+       <p style="font-size: 22px; font-weight: bold;">User</p>
+       <button class="custom-button" >Manage Users</button>
+       <p>You can change the status of the users, delete accounts, change plans, Send Notice Etc..,</p>
+       <p style="font-size: 22px;">Account Activation: </p>
+       <button class="custom-button m-b" >Delete Account</button>
+        </div>
+    </form>
+</div>

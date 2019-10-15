@@ -22,3 +22,16 @@
 .form-rounded {
     border-radius: 1rem;
 }
+.form-control {
+    border-radius: 1.25rem;
+  }
+  .input-group-text { 
+    background-color: white;
+    border-radius: 1.25rem;
+  }
+  input:focus {
+      outline: none;
+  }
+  select:focus {
+    outline: none;
+}
