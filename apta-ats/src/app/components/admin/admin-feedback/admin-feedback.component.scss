@@ -33,3 +33,32 @@
     top: 50%;
     transform: translate(-50%, -50%);
 }
+@import '../admin-mail/admin-mail.component.scss';
+.mails {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 10px 20px;
+}
+h5 {
+    color: #383838;
+}
+.dropdown-menu {
+    position: absolute;
+    top: -33px;
+    left: 74px;
+    width: 332px;
+    // background: linear-gradient(to bottom,  rgba(36,129,142,100%) , rgba(14,94,104,100%), );
+    padding: 6px 15px;
+  }
+  .dropdown-toggle::after {
+    display: none;
+}
+.dropdown p:not(span) {
+    font-size: 16px;
+    color: #404040;
+    font-weight: bold;
+}
+.dropdown span {
+    font-weight: lighter;
+    margin-left: 20px;
+}

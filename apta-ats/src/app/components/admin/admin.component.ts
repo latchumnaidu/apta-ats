@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   feedback = true;
   dateMonth;
   subscription: Subscription;
+  notifications = ['02:19 PM', '03:19 PM', '04:19 PM', '05:19 PM', '06:19 PM', '07:19 PM',];
   constructor(
     private router: Router,
     private dataShare: DataShareService
@@ -24,11 +25,6 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.subscription = this.dataShare.dataSubject.subscribe(res => {
-      if (res) {
-        this.router.navigate(['./admin/feedback']);
-      }
-    });
   }
   home() {
     this.router.navigate(['./admin/home']);
@@ -36,7 +32,21 @@ export class AdminComponent implements OnInit, OnDestroy {
   settings() {
     this.router.navigate(['./admin/settings']);
   }
+  mail() {
+    this.router.navigate(['./admin/mail']);
+  }
+  template() {
+    this.router.navigate(['./admin/template']);
+  }
+  users() {
+    this.router.navigate(['./admin/users']);
+  }
+  signOut() {
+    this.router.navigate(['./login']);
+  }
+  feedBack() {
+    this.router.navigate(['./admin/feedback']);
+  }
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }

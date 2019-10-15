@@ -3,7 +3,12 @@
             <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
                 <div class="row">
                     <div class="col-sm-8 offset-sm-4 m-t-xl">
-                        <mat-radio-group aria-label="Select an option" formControlName="signIn_type">
+                            <mat-radio-group aria-label="Select an option" formControlName="signIn_type" *ngIf="!recruiter">
+                                    <mat-radio-button value="manager" class="m-r">As Candidate</mat-radio-button>
+                                    <mat-radio-button value="internal" class="m-r">As Admin</mat-radio-button>
+                                    <mat-radio-button value="external" class="m-r">As Recruiter</mat-radio-button>
+                                </mat-radio-group>
+                        <mat-radio-group aria-label="Select an option" formControlName="signIn_type" *ngIf="recruiter">
                             <mat-radio-button value="manager" class="m-r">Sign Up as Hiring Manager</mat-radio-button>
                             <mat-radio-button value="internal" class="m-r">Sign Up as Internal Recruiter</mat-radio-button>
                             <mat-radio-button value="external" class="m-r">Sign Up as External Recruiter</mat-radio-button>

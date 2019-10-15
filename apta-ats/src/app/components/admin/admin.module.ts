@@ -10,6 +10,9 @@ import { DemoMaterialModule } from 'src/app/material-module';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
 import { AdminFeedbackComponent } from './admin-feedback/admin-feedback.component';
+import { AdminMailComponent } from './admin-mail/admin-mail.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
+import { AdminUsersComponent } from './admin-users/admin-users.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,10 @@ import { AdminFeedbackComponent } from './admin-feedback/admin-feedback.componen
         AdminComponent,
         AdminHomeComponent,
         AdminSettingsComponent,
-        AdminFeedbackComponent
+        AdminFeedbackComponent,
+        AdminMailComponent,
+        AdminTemplateComponent,
+        AdminUsersComponent
     ],
     imports: [
         CommonModule,

@@ -1,23 +1,44 @@
 <div class="overflow-hidden ">
     <nav class="navbar navbar-light p-l-r-0 nav_menu bg-nav_menu fixed-top ">
-        <div class="d-flex w-100 justify-content-between align-items-center">
+        <div class="row p-l-r-nav w-100 justify-content-between align-items-center">
             <h3 class="d-flex p-l-r-10 align-items-center pointer" (click)="landingPage()">
                 <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
             </h3>
-            <div class="col-sm-2 p-l-r-0 d-flex justify-content-around align-items-center m-r-n text-white">
-                <mat-icon matBadge="22" matBadgePosition="above after">email</mat-icon>
+            <div class="col-3 col-lg-2 p-l-r-0 d-flex justify-content-around align-items-center m-r-n text-white">
+                <mat-icon matBadge="22" (click)="mail()" class="m-r-sm"
+                 matBadgePosition="above after">email</mat-icon>
                 <mat-icon (click)="home()">home</mat-icon>
-                <mat-icon matBadge="10" matBadgePosition="above after">notifications</mat-icon>
+                <div ngbDropdown class="d-inline-block">
+                        <button class="outline-none bg-none b-none text-white" id="dropdownForm1" ngbDropdownToggle>
+                            <mat-icon matBadge="10" matBadgePosition="above after">notifications</mat-icon>
+                        </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                            <div class="d-flex justify-content-between notifications"
+                            *ngFor="let item of notifications" >
+                                <h5 class="col-sm-9">
+                                        Raj Tanveer has been selected for
+                                        Java Developer Role
+                                </h5>
+                                <div class="col-sm-3">
+                                    <h6>{{item}}</h6>
+                                    <h6 class="text-center">
+                                        <button class="filter">View</button>
+                                    </h6>
+                                </div>
+                            </div>
+                            <p class="text-center text-white m-t-sm pointer"> View  More</p>
+                        </div>
+                    </div>
                 <mat-icon class="m-l-sm">account_circle</mat-icon>
                 <button mat-icon-button [matMenuTriggerFor]="menu" class="outline-none"
                  aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
                 </button>
                 <mat-menu #menu="matMenu" class="z-index-high">
-                    <button mat-menu-item class="dot-menu-btn">
+                    <!-- <button mat-menu-item class="dot-menu-btn" (click)="template()">
                         <mat-icon>insert_drive_file</mat-icon>
                         <span>Templates</span>
-                    </button>
+                    </button> -->
                     <button mat-menu-item class="dot-menu-btn" (click)="settings()">
                         <mat-icon>settings</mat-icon>
                         <span>Settings</span>
@@ -30,7 +51,7 @@
                         <mat-icon>description</mat-icon>
                         <span>Terms and Conditions</span>
                     </button>
-                    <button mat-menu-item class="dot-menu-btn">
+                    <button mat-menu-item class="dot-menu-btn" (click)="signOut()">
                         <mat-icon>power_settings_new</mat-icon>
                         <span>Sign Out</span>
                     </button>
@@ -50,7 +71,7 @@
             <div class="col-sm-8 d-flex justify-content-between align-items-center">
                 <div class="card admin-cards">
                     <div class="card-body text-center">
-                        <h5 class="card-title">New Subscriptions</h5>
+                        <h5 class="card-title"> Subscriptions</h5>
                     </div>
                 </div>
                 <div class="card admin-cards">
@@ -66,12 +87,13 @@
             </div>
         </div>
     </nav>
-    <nav class="p-l-r-0 second_nav" style="margin-top:165px">
+    <nav class="p-l-r-0 second_nav" style="margin-top:175px">
         <div class="d-flex w-100 p-l-r-10 justify-content-between align-items-center">
-            <span>Users</span>
-            <span>Feedback</span>
-            <span>Subscription Plans</span>
-            <span>Hot Visitors</span>
+            <button (click)="users()" class="sub-nav_btns">Users</button>
+            <button class="sub-nav_btns" (click)="template()">Templates</button>
+            <button (click)="feedBack()">Feedback</button>
+            <button>Subscription Plans</button>
+            <button>Hot Visitors</button>
         </div>
     </nav>
     <div class="min-height">

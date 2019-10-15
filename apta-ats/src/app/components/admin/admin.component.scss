@@ -107,14 +107,21 @@ nav mat-icon {
 	// -webkit-background-clip: text;
 	// -webkit-text-fill-color: transparent;
 }
-.second_nav span {
+.second_nav button {
     padding: 10px;
     font-size: 25px;
     color: #373737;
     cursor: pointer;
+    border: none;
+    background: transparent;
 }
-.second_nav span:hover {
-    color: #1bb0c4;
+.second_nav button:hover {
+    color: #2F5257;
+}
+.second_nav button:focus {
+    background-color: #2F5257;
+    color: white;
+    border: 1px solid #2F5257;
 }
 .h-85 {
     height: 85px;
@@ -141,7 +148,7 @@ nav mat-icon {
 }
 .admin-cards {
     background: #228897;
-    width: 235px;
+    width: 165px;
     color: white;
     box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.64);
     border-radius: 0px;
@@ -154,3 +161,46 @@ nav mat-icon {
 .min-height {
     min-height: 400px;
 }
+.filter {
+    margin-right: 10px;
+    color: #353E40;
+    background-color: white;
+    box-shadow: 0px 0px 4px 2px rgba(97, 95, 95, 0.85);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    mat-icon {
+        margin-right: 5px;
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: unset;
+    right: 0; 
+    width: 332px;
+    background: linear-gradient(to bottom,  rgba(36,129,142,100%) , rgba(14,94,104,100%), );
+    padding: 6px 15px;
+  }
+  .dropdown-toggle::after {
+    display: none;
+}
+  .notifications {
+    background-color:#FFFFFF;
+    padding-top: 5px;
+    border-radius: 19px;
+    // box-shadow: 0px 0px 5px rgba(97, 95, 95, 0.85);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    h5 {
+        color: #666666;
+        font-size: 13px;
+    }
+    h6 {
+        font-size: 11px;
+    }
+  }
+  .p-l-r--nav {
+    padding-left: 5px;
+    padding-right: 15px;
+  }

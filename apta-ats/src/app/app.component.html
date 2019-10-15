@@ -67,7 +67,8 @@
   </div> 
 </div> -->
 <div class="container-fluid p-l-r-0 hide-x-overflow">
-    <h4 class="feedback d-flex justify-content-center align-items-center pointer" (click)="feedBack()">
+    <h4 class="feedback d-flex justify-content-center align-items-center pointer"
+     (click)="feedBack()" *ngIf="!feedback" >
         feedback
       </h4>
       <router-outlet></router-outlet>

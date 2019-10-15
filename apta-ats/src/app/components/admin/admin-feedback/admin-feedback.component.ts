@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-admin-feedback',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminFeedbackComponent implements OnInit {
   feedbackType = 'Bug';
-  constructor() { }
+  feedbacks = ['User_1', 'User_2', 'User_3', 'User_4', 'User_5', 'User_6', 'User_7'];
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
-
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
 }

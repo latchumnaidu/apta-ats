@@ -1,3 +1,4 @@
+import { DataShareService } from './../../../data-share.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,6 +12,7 @@ export class SignInComponent implements OnInit {
 signInForm: FormGroup;
 submitted = false;
   constructor(private router: Router,
+              private dataShare: DataShareService,
               private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -35,12 +37,12 @@ submitted = false;
   onSubmit() {
     this.submitted = true;
 
+    this.dataShare.dataSubject.next('true');
+    sessionStorage.setItem('user_type', 'admin');
+    this.router.navigate(['./admin']);
     // stop here if form is invalid
     if (this.signInForm.invalid) {
         return;
     }
-  }
-  loginAs() {
-    this.router.navigate(['./admin']);
   }
 }

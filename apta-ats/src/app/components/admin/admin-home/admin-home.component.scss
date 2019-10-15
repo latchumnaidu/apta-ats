@@ -15,8 +15,8 @@
     border: 1px solid #424242;
     background: #424242;
     color: white;
-    border-radius: 6px;
-    padding: 2px 15px;
+    // border-radius: 6px;
+    padding: 15px 15px;
 }
 .subscription_sub p {
     font-size: 16px;
@@ -24,4 +24,17 @@
     font-weight: 600;
     margin-bottom: inherit;
     padding-left: 0;
+}
+.plans {
+    padding: 100px 10px;
+    position: relative;
+    border: 1px solid #424242;
+}
+.main-plan {
+    position: absolute;
+    left: 36%;
+    top: -47px;
+}
+.m-t-xxxxl {
+    margin-top: 70px;
 }

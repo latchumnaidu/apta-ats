@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class SignUpComponent implements OnInit {
   signInForm: FormGroup;
   submitted = false;
+  recruiter = false;
     constructor(private router: Router,
                 private fb: FormBuilder) { }
     ngOnInit() {
@@ -22,6 +23,11 @@ export class SignUpComponent implements OnInit {
         email: ['', [Validators.required, Validators.email, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         name: ['', [Validators.required]],
+      });
+      this.signInForm.get('signIn_type').valueChanges.subscribe(res => {
+        if (res === 'external') {
+          this.recruiter = true;
+        }
       });
     }
     get form() {

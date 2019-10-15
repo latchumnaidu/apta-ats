@@ -1,7 +1,4 @@
-<div>
-        <!-- <div class="position-absolute feedback-bgImg">
-                <img src="../../../assets/feedback-logo2.png" alt="">
-            </div> -->
+<!-- <div>
 <div style="margin-top: 75px;">
         <div class="text-center"> <img src="../../../../assets/feedback-logo1.png" alt=""> </div>
     <h4 class="text-center m-b-md">Your Experience with Apta ATS</h4>
@@ -32,4 +29,57 @@
     <img src="../../../../assets/feedback-logo2.png" >
 </div>
 </div>
+</div> -->
+<div class="p-r-sm m-t-lg">
+    <div class="mails" *ngFor="let item of feedbacks">
+        <div class="row justify-content-between col-sm-12">
+            <h5>{{item}}</h5>
+            <div class="d-flex  col-lg-4 col-6 justify-content-around">
+                <button class="compose">Assign To Teams</button>
+                <div ngbDropdown class="d-inline-block">
+                        <button class="compose" id="dropdownForm1"
+                         ngbDropdownToggle >
+                         Details
+                                </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                            <p class="text-center" style="font-size: 23px;">Feedback Details</p>
+                            <p>Name: <span>NitinNeymar</span></p>
+                            <p>Organization: <span>NVDIA Design Solutions</span></p>
+                            <p>Email: <span>abcd@gmail.com</span></p>
+                            <p>Phone: <span>0987654321</span></p>
+                            <p>Feedback Time: <span>02 May 2019</span></p>
+                            <p>
+                                <button class="compose" (click)="openVerticallyCentered(content)">Raise Ticket</button>
+                            </p>
+                        </div>
+                    </div>
+                    <ng-template #content let-modal>
+                        
+                            <div class="modal-body">
+                                   <p>Assign Feedback <button class="compose m-l">Jyothi Patel</button></p>
+                                   <p> Feedback Subject<button class="compose m-l">Internal Mailing</button></p>
+                                   <p>Duration <span>20 Sep 2019</span></p>
+                                   <p class="text-center">
+                                       <button class="compose" (click)="modal.close('Close click')">OK</button>
+                                   </p>
+                            </div>
+                            
+                          </ng-template>
+                <button class="d-flex justify-content-around filter">
+                    <mat-icon>email</mat-icon>
+                    <span>Email</span>
+                </button>
+            </div>
+            <h5>From Glassdoor</h5>
+        </div>
+        <div class="row col-sm-10 m-t-sm">
+            <h5>I cant receive emails from my Clients and the Internal Mailing system was too slow. I cant add templates
+                of my own. Please look after it
+                as soon as possible.
+                <button class=" filter m-l-sm m-t-sm">
+                    View
+                </button>
+            </h5>
+        </div>
+    </div>
 </div>
