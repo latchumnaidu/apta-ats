@@ -21,7 +21,7 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.dataShare.dataSubject.next('');
   }
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });

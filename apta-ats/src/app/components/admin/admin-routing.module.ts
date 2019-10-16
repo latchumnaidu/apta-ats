@@ -1,3 +1,6 @@
+import { AdminVisitorsComponent } from './admin-visitors/admin-visitors.component';
+import { AdminSubscriptionComponent } from './admin-subscription/admin-subscription.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
@@ -22,6 +25,9 @@ const routes: Routes = [
             {path: 'mail', component: AdminMailComponent },
             {path: 'template', component: AdminTemplateComponent },
             {path: 'users', component: AdminUsersComponent },
+            {path: 'profile', component:  AdminProfileComponent},
+            {path: 'subscription', component:  AdminSubscriptionComponent},
+            {path: 'visitors', component:  AdminVisitorsComponent},
         ]
     }
 

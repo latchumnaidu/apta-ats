@@ -1,0 +1,65 @@
+<div class="col-sm-10 justify-content-end m-t-xs m-w-940  row align-items-center">
+        <div class="col-md-8">
+          <mat-form-field class="w-100">
+            <input matInput  placeholder="Search for Mails">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-2 ">
+           
+                <div ngbDropdown class="d-inline-block">
+                        <button class="d-flex justify-content-around filter" id="dropdownForm1"
+                         ngbDropdownToggle >
+                                <mat-icon>filter_list</mat-icon>
+                                <span>Filter By</span>
+                                </button>
+                        <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                            <div>Active Users</div>
+                            <div class="dropdown-divider"></div>
+                            <div>InActive Users</div>
+                            <div class="dropdown-divider"></div>
+                            <div>Organization</div>
+                            <div class="dropdown-divider"></div>
+                            <div>Free Trail Plan</div>
+                            <div class="dropdown-divider"></div>
+                            <div>Stabdard  Plan</div>
+                            <div class="dropdown-divider"></div>
+                            <div>Business  Plan</div>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-md-2">
+                <button class="d-flex justify-content-around filter">
+                    <mat-icon>email</mat-icon>
+                    <span>Email</span>
+                </button>
+            </div>
+      </div>
+      <div class="row p-r-sm" >
+          <div class="col-md-4" *ngFor="let item of users">
+              <div class="row m-l-none">
+                  <div class="col-sm-1 p-t">
+                        <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="2"></mat-radio-button>
+                              </mat-radio-group>
+                  </div>
+                  <div class="col-sm-11">
+                        <div class="mails" >
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h3 class="heading1">Name:  <span>{{item}}</span></h3>
+                                    <h3 class="heading1">Email:  <span>abcd@gmail.com</span></h3>
+                                    <h3 class="heading1">Sign In Details:  <span> 16th Sep 2019 @ 10:30 AM</span></h3>
+                                    
+                                </div>
+                                <div class="col-sm-9 d-flex justify-content-between">
+                                        <button class="compose">View Details</button>
+                                        <mat-icon> phone</mat-icon>
+                                        <span class="heading1">Email</span>
+                                    </div>
+                            </div>
+                        </div>
+                  </div>
+              </div>
+          </div>
+      </div>

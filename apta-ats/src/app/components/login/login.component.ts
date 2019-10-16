@@ -19,12 +19,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     sessionStorage.setItem('feedback', '');
     this.subscription = this.dataShare.dataSubject.subscribe(res => {
       //   this.feedback = res;
-      if (res) {
-        sessionStorage.setItem('feedback', 'true');
-        this.router.navigate(['./login/feedback']);
-      }
-      this.feedback = sessionStorage.getItem('feedback');
+      // if (res) {
+        if (res === 'feedback') {
+          sessionStorage.setItem('feedback', 'true');
+          this.router.navigate(['./login/feedback']);
+        }
+      // }
     });
+    this.feedback = sessionStorage.getItem('feedback');
   }
   signInPage() {
     sessionStorage.setItem('feedback', 'true');

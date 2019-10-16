@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.subMenu = false;
   }
   feedBack() {
-    this.dataShare.dataSubject.next(true);
+    this.dataShare.dataSubject.next('feedback');
     sessionStorage.setItem('feedback', 'true');
   }
   ngOnDestroy() {

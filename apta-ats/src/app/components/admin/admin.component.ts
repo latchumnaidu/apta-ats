@@ -25,6 +25,8 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.dataShare.dataSubject.next('true');
+    sessionStorage.setItem('user_type', 'admin');
   }
   home() {
     this.router.navigate(['./admin/home']);
@@ -46,6 +48,15 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
   feedBack() {
     this.router.navigate(['./admin/feedback']);
+  }
+  profile() {
+    this.router.navigate(['./admin/profile']);
+  }
+  subscriptionPage() {
+    this.router.navigate(['./admin/subscription']);
+  }
+  visitors() {
+    this.router.navigate(['./admin/visitors']);
   }
   ngOnDestroy() {
   }

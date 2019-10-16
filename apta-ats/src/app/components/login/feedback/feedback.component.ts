@@ -1,3 +1,4 @@
+import { DataShareService } from './../../../data-share.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeedbackComponent implements OnInit {
   feedbackType = 'Bug';
-  constructor() { }
+  constructor(
+    private dataShare: DataShareService
+  ) { }
 
   ngOnInit() {
+    this.dataShare.dataSubject.next('feedback');
   }
 
 }

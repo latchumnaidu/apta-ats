@@ -1,0 +1,40 @@
+.profile-main {
+    height: 400px;
+    border: 2px solid #24818e;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 500px;
+    &_top {
+        height: 150px;
+        background: #24818e;
+    }
+    &_photo {
+        left: 50%;
+        bottom: -20%;
+        transform: translate(-50px, 3px);
+        border: 1px solid white;
+        padding: 5px;
+        border-radius: 50%;
+        background: white;
+        position: absolute;
+        img {
+            height: 100px;
+        }
+    }
+}
+.profileDetails h5{
+    color: #707070;
+    font-size: 25px;
+    font-weight: bold;
+}
+.profileDetails span {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: lighter;
+    // color: #707070;
+}
+.profileDetails {
+    padding: 10px;
+    margin-top: 10px;
+}

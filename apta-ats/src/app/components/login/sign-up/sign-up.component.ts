@@ -1,3 +1,4 @@
+import { DataShareService } from './../../../data-share.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,9 +13,11 @@ export class SignUpComponent implements OnInit {
   submitted = false;
   recruiter = false;
     constructor(private router: Router,
+                private dataShare: DataShareService,
                 private fb: FormBuilder) { }
     ngOnInit() {
       this.inItForm();
+      this.dataShare.dataSubject.next('true');
     }
 
     inItForm() {

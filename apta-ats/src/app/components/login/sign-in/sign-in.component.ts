@@ -17,6 +17,7 @@ submitted = false;
 
   ngOnInit() {
     this.inItForm();
+    this.dataShare.dataSubject.next('true');
   }
   forgotPsw() {
     this.router.navigate(['./login/forgot-psw']);

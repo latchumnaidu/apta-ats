@@ -13,6 +13,9 @@ import { AdminFeedbackComponent } from './admin-feedback/admin-feedback.componen
 import { AdminMailComponent } from './admin-mail/admin-mail.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { AdminUsersComponent } from './admin-users/admin-users.component';
+import { AdminProfileComponent } from './admin-profile/admin-profile.component';
+import { AdminSubscriptionComponent } from './admin-subscription/admin-subscription.component';
+import { AdminVisitorsComponent } from './admin-visitors/admin-visitors.component';
 
 @NgModule({
     declarations: [
@@ -23,7 +26,10 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
         AdminFeedbackComponent,
         AdminMailComponent,
         AdminTemplateComponent,
-        AdminUsersComponent
+        AdminUsersComponent,
+        AdminProfileComponent,
+        AdminSubscriptionComponent,
+        AdminVisitorsComponent
     ],
     imports: [
         CommonModule,

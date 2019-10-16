@@ -29,7 +29,7 @@
                             <p class="text-center text-white m-t-sm pointer"> View  More</p>
                         </div>
                     </div>
-                <mat-icon class="m-l-sm">account_circle</mat-icon>
+                <mat-icon class="m-l-sm pointer" (click)="profile()">account_circle</mat-icon>
                 <button mat-icon-button [matMenuTriggerFor]="menu" class="outline-none"
                  aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
@@ -69,17 +69,17 @@
                 <span class="date-text">{{dateMonth.date}}</span>
             </div>
             <div class="col-sm-8 d-flex justify-content-between align-items-center">
-                <div class="card admin-cards">
+                <div class="card admin-cards" (click) ="subscriptionPage()">
                     <div class="card-body text-center">
                         <h5 class="card-title"> Subscriptions</h5>
                     </div>
                 </div>
-                <div class="card admin-cards">
+                <div class="card admin-cards" (click)="feedBack()">
                     <div class="card-body text-center">
                         <h5 class="card-title">Feedback</h5>
                     </div>
                 </div>
-                <div class="card admin-cards">
+                <div class="card admin-cards" (click) = "visitors()">
                     <div class="card-body text-center">
                         <h5 class="card-title">Hot Visitors</h5>
                     </div>
@@ -92,8 +92,8 @@
             <button (click)="users()" class="sub-nav_btns">Users</button>
             <button class="sub-nav_btns" (click)="template()">Templates</button>
             <button (click)="feedBack()">Feedback</button>
-            <button>Subscription Plans</button>
-            <button>Hot Visitors</button>
+            <button (click) ="subscriptionPage()">Subscription Plans</button>
+            <button (click) = "visitors()">Hot Visitors</button>
         </div>
     </nav>
     <div class="min-height">
