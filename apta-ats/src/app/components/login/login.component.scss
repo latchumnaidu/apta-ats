@@ -1,6 +1,21 @@
 .navbar {
     background: transparent;
 }
+.feedback {
+    position: fixed;
+    z-index: 1;
+    top: 290px;
+    right: -72px;
+    height: 34px;
+    width: 176px;
+    background: #eee;
+    border: 1px solid #eee;
+    overflow-x: hidden;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    transform: rotate(-90deg);
+    color: #137377;
+}
 .logo_1 {
     font-size: 35px;
     color: #1BB0C4;

@@ -17,7 +17,6 @@ submitted = false;
 
   ngOnInit() {
     this.inItForm();
-    this.dataShare.dataSubject.next('true');
   }
   forgotPsw() {
     this.router.navigate(['./login/forgot-psw']);
@@ -37,13 +36,25 @@ submitted = false;
   }
   onSubmit() {
     this.submitted = true;
-
-    this.dataShare.dataSubject.next('true');
-    sessionStorage.setItem('user_type', 'admin');
-    this.router.navigate(['./admin']);
+    this.pageNavigation();
     // stop here if form is invalid
     if (this.signInForm.invalid) {
-        return;
+      return;
     }
+  }
+  pageNavigation() {
+    const email = this.signInForm.get('email').value;
+    sessionStorage.setItem('user_type', email);
+    if (email === 'admin') {
+      this.router.navigate(['./admin']);
+    } else if (email === 'hManager') {
+      this.router.navigate(['./hiring-manager']);
+    }
+  }
+  landingPage() {
+    this.router.navigate(['./login/landing-page']);
+  }
+  signInPage() {
+    this.router.navigate(['./login/signIn']);
   }
 }

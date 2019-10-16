@@ -16,12 +16,7 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private router: Router,
               private dataShare: DataShareService) {}
   ngOnInit() {
-    this.subscription = this.dataShare.dataSubject.subscribe(res => {
-      const user = sessionStorage.getItem('user_type');
-      if (res && (user === 'admin')) {
-        this.feedback = true;
-      }
-    });
+
   }
   home() {
     this.router.navigate(['./home']);
@@ -34,10 +29,6 @@ export class AppComponent implements OnInit, OnDestroy {
   pricing() {
     this.router.navigate(['./pricing']);
     this.subMenu = false;
-  }
-  feedBack() {
-    this.dataShare.dataSubject.next('feedback');
-    sessionStorage.setItem('feedback', 'true');
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

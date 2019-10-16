@@ -17,7 +17,6 @@ export class SignUpComponent implements OnInit {
                 private fb: FormBuilder) { }
     ngOnInit() {
       this.inItForm();
-      this.dataShare.dataSubject.next('true');
     }
 
     inItForm() {
@@ -41,5 +40,11 @@ export class SignUpComponent implements OnInit {
       if (this.signInForm.invalid) {
           return;
       }
+    }
+    landingPage() {
+      this.router.navigate(['./login/landing-page']);
+    }
+    signInPage() {
+      this.router.navigate(['./login/signIn']);
     }
 }

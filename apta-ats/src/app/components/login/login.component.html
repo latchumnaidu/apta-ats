@@ -1,5 +1,5 @@
 <div class="overflow-hidden position-relative">
-    <nav class="navbar navbar-light nav_menu position-absolute" [ngClass]="{'bg-nav_menu' : feedback}">
+    <!-- <nav class="navbar navbar-light nav_menu position-absolute" [ngClass]="{'bg-nav_menu' : feedback}">
         <div class="row w-100 justify-content-between align-items-center">
             <h3 class="d-flex align-items-center pointer" (click)="landingPage()">
                 <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
@@ -9,7 +9,11 @@
                 <button class="nav-btns text-center" (click)="signUpPage()">Sign Up</button>
             </div>
         </div>
-    </nav>
+    </nav> -->
+    <h4 class="feedback d-flex justify-content-center align-items-center pointer"
+     (click)="feedbackPage()">
+        feedback
+      </h4>
     <router-outlet></router-outlet>
         <div class="footer-text">
             <h6 class="footer-text_h6">Aptagrim </h6>

@@ -1,5 +1,7 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { DataShareService } from 'src/app/data-share.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -10,7 +12,8 @@ export class ForgotPasswordComponent implements OnInit {
 confirmMail = false;
 submitted = false;
 forgotPswForm: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private router: Router,
+              private dataShare: DataShareService) { }
 
   ngOnInit() {
     this.inItForm();
@@ -33,5 +36,13 @@ forgotPswForm: FormGroup;
       this.confirmMail = true;
     }
   }
-
+  landingPage() {
+    this.router.navigate(['./login/landing-page']);
+  }
+  signInPage() {
+    this.router.navigate(['./login/signIn']);
+  }
+  signUpPage() {
+    this.router.navigate(['./login/signUp']);
+  }
 }

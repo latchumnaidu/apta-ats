@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
+  },
+  {
+    path: 'hiring-manager',
+    loadChildren: () => import('./components/hiring-manager/hiringManager.module').then(m => m.HiringManagerModule)
   }
 ];
 

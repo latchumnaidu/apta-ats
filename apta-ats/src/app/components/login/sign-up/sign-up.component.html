@@ -1,4 +1,15 @@
 <div class="overflow-hidden position-relative min-h">
+        <nav class="navbar navbar-light nav_menu position-absolute bg-nav_menu" >
+                <div class="row w-100 justify-content-between align-items-center">
+                    <h3 class="d-flex align-items-center pointer" (click)="landingPage()">
+                        <span class="logo_1">Apta</span> <span class="logo_2">ATS</span>
+                    </h3>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <button class="nav-btns text-center" (click)="signInPage()">Sign In</button>
+                        <button class="nav-btns text-center" (click)="signUpPage()">Sign Up</button>
+                    </div>
+                </div>
+            </nav>
         <div class="container-fluid" style="margin-top:75px">
             <form [formGroup]="signInForm" (ngSubmit)="onSubmit()">
                 <div class="row">

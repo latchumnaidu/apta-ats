@@ -21,14 +21,14 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataShare.dataSubject.next('');
   }
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
   }
   signInPage() {
-    sessionStorage.setItem('feedback', 'true');
-    this.dataShare.dataSubject.next(false);
     this.router.navigate(['./login/signIn']);
+  }
+  signUpPage() {
+    this.router.navigate(['./login/signUp']);
   }
 }

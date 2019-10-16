@@ -12,7 +12,7 @@ export class AdminComponent implements OnInit, OnDestroy {
   feedback = true;
   dateMonth;
   subscription: Subscription;
-  notifications = ['02:19 PM', '03:19 PM', '04:19 PM', '05:19 PM', '06:19 PM', '07:19 PM',];
+  notifications = ['02:19 PM', '03:19 PM', '04:19 PM', '05:19 PM', '06:19 PM', '07:19 PM', ];
   constructor(
     private router: Router,
     private dataShare: DataShareService
@@ -44,6 +44,7 @@ export class AdminComponent implements OnInit, OnDestroy {
     this.router.navigate(['./admin/users']);
   }
   signOut() {
+    this.dataShare.dataSubject.next('');
     this.router.navigate(['./login']);
   }
   feedBack() {

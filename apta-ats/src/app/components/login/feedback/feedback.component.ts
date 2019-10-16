@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataShareService } from './../../../data-share.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,11 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class FeedbackComponent implements OnInit {
   feedbackType = 'Bug';
   constructor(
-    private dataShare: DataShareService
+    private dataShare: DataShareService,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.dataShare.dataSubject.next('feedback');
   }
-
+  landingPage() {
+    this.router.navigate(['./login/landing-page']);
+  }
+  signInPage() {
+    this.router.navigate(['./login/signIn']);
+  }
+  signUpPage() {
+    this.router.navigate(['./login/signUp']);
+  }
 }

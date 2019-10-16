@@ -16,35 +16,11 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router) { }
 
   ngOnInit() {
-    sessionStorage.setItem('feedback', '');
-    this.subscription = this.dataShare.dataSubject.subscribe(res => {
-      //   this.feedback = res;
-      // if (res) {
-        if (res === 'feedback') {
-          sessionStorage.setItem('feedback', 'true');
-          this.router.navigate(['./login/feedback']);
-        }
-      // }
-    });
-    this.feedback = sessionStorage.getItem('feedback');
   }
-  signInPage() {
-    sessionStorage.setItem('feedback', 'true');
-    this.feedback = sessionStorage.getItem('feedback');
-    this.router.navigate(['./login/signIn']);
-  }
-  landingPage() {
-    sessionStorage.setItem('feedback', '');
-    this.feedback = sessionStorage.getItem('feedback');
-    this.router.navigate(['./login/landing-page']);
-    // this.dataShare.dataSubject.next(false);
-  }
-  signUpPage() {
-    sessionStorage.setItem('feedback', 'true');
-    this.feedback = sessionStorage.getItem('feedback');
-    this.router.navigate(['./login/signUp']);
+
+  feedbackPage() {
+    this.router.navigate(['./login/feedback']);
   }
   ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }

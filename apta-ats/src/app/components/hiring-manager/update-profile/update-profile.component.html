@@ -1,0 +1,186 @@
+<div class="conrtainer-fluid p-l-r-0 m-t-dash">
+
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="adminDashboardForm">
+            <form [formGroup]="adminDashboardForm" >
+                <ng-template matStepLabel>Update Account</ng-template>
+                <div class="row ">
+                    <div class="col-sm-12 p-l-r">
+                        <div class="col-sm-12">
+                            <div class="welcome-text">Welcome Naveen Sagha</div>
+                            <p class="welcome-text_1">Please update your profile</p>
+                        </div>
+                        <div class="row  align-items-center profile-margin">
+                            <div class="col-lg-2 col-sm-4">
+                                <div class="profile_icon position-relative">
+                                    <mat-icon>person</mat-icon>
+                                    <div class="profile_icon_sub position-absolute">
+                                        <mat-icon>camera_alt</mat-icon>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="file_upload">
+                                    <input type="file" id="real-file" formControlName="name" hidden="hidden" />
+                                    <button type="button" class="custom-button" id="custom-button">Upload</button>
+                                    <span id="custom-text">No file chosen, yet.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row p-l-r align-items-center">
+                            <!-- full name -->
+                            <div class=" mb-3 m-t-sm w-50 m-r">
+                                <label for="name" class="d-block">Full Name</label>
+                                <input type="text" class="form-rounded p-2 w-100" formControlName="name" id="name">
+                            </div>
+                            <div *ngIf="submitted && form.name.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.name.errors.required">* This field is required</div>
+                            </div>
+                            <!-- date of birth -->
+                            <div class=" mb-3 m-t-sm m-r">
+                                <label for="date" class="d-block">Date of Birth</label>
+                                <input type="date" class="form-rounded p-2" formControlName="dob" id="date">
+                            </div>
+                            <div *ngIf="submitted && form.dob.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.dob.errors.required">* This field is required</div>
+                            </div>
+                            <!-- langulage-->
+                            <div class=" mb-3 m-t-sm ">
+                                <label for="lang" class="d-block">Language</label>
+                                <select class="form-rounded p-xs" formControlName="language">
+                                    <option value="1">English</option>
+                                    <option value="2">Hindi</option>
+                                    <option value="3">Telugu</option>
+                                </select>
+                            </div>
+                            <div *ngIf="submitted && form.language.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.language.errors.required">* This field is required</div>
+                            </div>
+                        </div>
+                        <div class="row p-l-r align-items-center">
+                            <!-- phone-->
+                            <div class="m-r">
+                                <label for="phone" class="d-block">Phone Number</label>
+                                <div class="input-group mb-3 m-t-sm ">
+                                    <div class="input-group-prepend">
+                                        <select class="input-group-text" formControlName="language">
+                                            <option value="1">+91</option>
+                                            <option value="2">+61</option>
+                                            <option value="3">+1</option>
+                                        </select>
+                                    </div>
+                                    <input type="number" class="form-control p-2" formControlName="phone" id="phone">
+                                </div>
+                                <div *ngIf="submitted && form.phone.errors" class="text-red text-left m-t-n-sm">
+                                    <div *ngIf="form.phone.errors.required">* This field is required</div>
+                                </div>
+                            </div>
+                            <!-- location name -->
+                            <div class=" mb-3 m-t-sm w-25">
+                                <label for="location" class="d-block">Current Location</label>
+                                <input type="text" class="form-rounded p-2" formControlName="location" id="location">
+                            </div>
+                            <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.location.errors.required">* This field is required</div>
+                            </div>
+                        </div>
+                        <div class="row p-l-r align-items-center">
+                            <!-- gender name -->
+                            <div class=" mb-3 m-t-sm">
+                                <label for="gender" class="d-block">Gender</label>
+                                <mat-radio-group aria-label="Select an option" formControlName="gender" id="gender">
+                                    <mat-radio-button value="1">Male</mat-radio-button>
+                                    <mat-radio-button value="2">Female</mat-radio-button>
+                                    <mat-radio-button value="3">Other</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                            <div *ngIf="submitted && form.gender.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.gender.errors.required">* This field is required</div>
+                            </div>
+                        </div>
+                        <h5 class="company-details">Company Details</h5>
+                        <div class="row  align-items-center">
+                            <!-- company name -->
+                            <div class="mb-3 m-t-sm col-md-5">
+                                <label for="location" class="d-block">Company Name</label>
+                                <input type="text" class="form-rounded p-2 w-100" formControlName="location"
+                                    id="location">
+                            </div>
+                            <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.location.errors.required">* This field is required</div>
+                            </div>
+                            <!-- company name -->
+                            <div class=" mb-3 m-t-sm col-md-4">
+                                <label for="location" class="d-block">Role In Your Company </label>
+                                <input type="text" class="form-rounded p-2 w-100" formControlName="location"
+                                    id="location">
+                            </div>
+                            <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.location.errors.required">* This field is required</div>
+                            </div>
+
+                            <!-- company name -->
+                            <div class=" mb-3 m-t-sm col-sm-3">
+                                <label for="location" class="d-block">Zip code </label>
+                                <input type="text" class="form-rounded p-2" formControlName="location" id="location">
+                            </div>
+                            <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.location.errors.required">* This field is required</div>
+                            </div>
+                        </div>
+                        <div class="row p-l-r align-items-center">
+                            <!-- company name -->
+                            <div class="m-r mb-3 m-t-sm w-25">
+                                <label for="location" class="d-block">Address</label>
+                                <textarea class="form-rounded p-2" formControlName="location" id="location"></textarea>
+                            </div>
+                            <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
+                                <div *ngIf="form.location.errors.required">* This field is required</div>
+                            </div>
+
+                        </div>
+                        <!-- <p class="text-center">
+                                                    <button class="custom-button" (click)="home()">Save</button>
+                                                </p> -->
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperNext class="custom-button">Save and Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="paymentForm">
+            <form [formGroup]="paymentForm" >
+                <ng-template matStepLabel>Payment Details</ng-template>
+                <div class=" mb-3 m-t-sm col-sm-3">
+                        <label for="location" class="d-block">Card Holder Name </label>
+                        <input type="text" class="form-rounded p-2" formControlName="card_name" id="location">
+                    </div>
+                    <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
+                        <div *ngIf="form.card_name.errors.required">* This field is required</div>
+                    </div>
+                    <div class=" mb-3 m-t-sm col-sm-3">
+                            <label for="location" class="d-block">Card Number  </label>
+                            <input type="text" class="form-rounded p-2" formControlName="card_name" id="location">
+                        </div>
+                        <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
+                            <div *ngIf="form.card_name.errors.required">* This field is required</div>
+                        </div>
+                <div class="d-flex col-sm-3 justify-content-between">
+                    <button mat-button matStepperPrevious class="custom-button">Back</button>
+                    <button mat-button matStepperNext class="custom-button">Save and Continue</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Done</ng-template>
+            You are now done.
+            <div class="d-flex col-sm-2 justify-content-between">
+                <button mat-button matStepperPrevious class="custom-button">Back</button>
+                <button mat-button (click)="stepper.reset()" class="custom-button">Reset</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+
+
+</div>
