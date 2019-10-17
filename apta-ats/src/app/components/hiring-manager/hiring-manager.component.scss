@@ -169,7 +169,7 @@ nav mat-icon {
     -moz-transition: margin .25s ease-out;
     -o-transition: margin .25s ease-out;
     transition: margin .25s ease-out;
-    background-color: #393838;
+    background: linear-gradient(to bottom, rgba(52,68,71,100%), rgba(56,56,56,100%));
   }
   
   #sidebar-wrapper .sidebar-heading {
@@ -224,3 +224,42 @@ nav mat-icon {
     cursor: pointer;
 }
   //end
+  .scroll-arrow {
+      background: #267884;
+      border: #267884;
+      height: 80px;
+      width: 40px;
+  }
+  .scroll-main {
+      p {
+        color: white !important;
+        margin-bottom: 10px;
+        font-size: 13px !important;
+        font-family: century gothic;
+        text-align: center !important;
+      }
+  }
+  .m-t-66 {
+      margin-top: 66px !important;
+  }
+  .admin-cards {
+    background: rgba(143, 143, 143, .5);
+    height: 80px;
+    color: white;
+    // box-shadow: 0px 4px 6px -2px rgba(0, 0, 0, 0.64);
+    border-radius: 9px;
+    cursor: pointer;
+    h6 {
+        font-size: 13px;
+        margin-top: -10px;
+    }
+    h5{
+        font-size: 14px;
+    }
+}
+.scroll-content {
+    max-width: 300px;
+}
+.nav-opacity {
+opacity: .5;
+}

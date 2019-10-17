@@ -1,3 +1,4 @@
+import { DataShareService } from './../../../data-share.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -21,11 +22,13 @@ export class UpdateProfileComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private modalService: NgbModal,
+    private dataShare: DataShareService,
   ) { }
 
   ngOnInit() {
     // this.fileUpload();
     this.inItForm();
+    this.dataShare.dataSubject.next(true);
   }
   inItForm() {
     this.adminDashboardForm = this.fb.group({
@@ -75,5 +78,9 @@ export class UpdateProfileComponent implements OnInit {
   }
   openVerticallyCentered(content) {
     this.modalService.open(content, { centered: true });
+  }
+  dashBoard() {
+    this.dataShare.dataSubject.next(false);
+    this.router.navigate(['./hiring-manager/dashboard']);
   }
 }

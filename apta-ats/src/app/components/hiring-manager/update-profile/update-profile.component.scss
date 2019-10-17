@@ -273,3 +273,27 @@
     font-weight: 600;
     color: #707070;
 }
+.alldone {
+  left: 25%;
+  top: 43%;
+  transform: translate(-25%, -43%);
+  box-shadow: 0px 0px 4px 0px #aaaaaa;
+  background: white;
+  border: none;
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+
+  mat-icon {
+    color: #23828F;
+  }
+}
+
+.alldone:hover {
+  color: white;
+  background: #23828F;
+  mat-icon {
+   color: white;
+ }
+
+}

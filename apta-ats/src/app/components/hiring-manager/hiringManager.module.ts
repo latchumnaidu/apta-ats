@@ -8,12 +8,18 @@ import { DemoMaterialModule } from 'src/app/material-module';
 import { HiringManagerRoutingModule } from './hiringmanager-routing.module';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RecruitersComponent } from './recruiters/recruiters.component';
+import { AddRecruitersComponent } from './recruiters/add-recruiters/add-recruiters.component';
+import { AllRecruitersComponent } from './recruiters/all-recruiters/all-recruiters.component';
 
 @NgModule({
     declarations: [
         HiringManagerComponent,
         UpdateProfileComponent,
-        DashboardComponent
+        DashboardComponent,
+        RecruitersComponent,
+        AddRecruitersComponent,
+        AllRecruitersComponent
     ],
     imports: [
         CommonModule,

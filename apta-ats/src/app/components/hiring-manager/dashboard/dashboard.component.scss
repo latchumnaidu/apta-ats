@@ -1,0 +1,16 @@
+.heading {
+    color: #707070;
+    font-size: 20px;
+    font-weight: bold;
+}
+.nodata {
+    min-height: 75vh;
+    background: #707070;
+    img {
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%,-18%);
+        height: 50px;
+        cursor: pointer;
+    }
+}

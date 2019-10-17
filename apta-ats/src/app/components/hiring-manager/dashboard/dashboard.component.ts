@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { DataShareService } from './../../../data-share.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private dataShare: DataShareService,
+    private router: Router) { }
 
   ngOnInit() {
+    this.dataShare.dataSubject.next(false);
   }
-
+  manageRecruiters() {
+    this.router.navigate(['./hiring-manager/recruiters']);
+  }
 }
