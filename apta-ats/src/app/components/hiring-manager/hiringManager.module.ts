@@ -7,11 +7,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DemoMaterialModule } from 'src/app/material-module';
 import { HiringManagerRoutingModule } from './hiringmanager-routing.module';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
     declarations: [
         HiringManagerComponent,
-        UpdateProfileComponent
+        UpdateProfileComponent,
+        DashboardComponent
     ],
     imports: [
         CommonModule,

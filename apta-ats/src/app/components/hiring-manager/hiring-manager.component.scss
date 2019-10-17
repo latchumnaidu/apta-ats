@@ -25,6 +25,15 @@
         color: white;
     }
   }
+  .nav-button {
+    color: #353E40;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer; 
+    font-size: 12px;
+    padding-right: 10px;
+  }
 .footer-text {
     color: #FFFFFF;
     padding-top: 10px;
@@ -36,6 +45,16 @@
     }
     &_span {
         font-size: 12px;
+    }
+}
+.admin-text {
+    &_1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    &_2 {
+        text-align: center;
+        font-size: 20px;
     }
 }
 .h-400 {
@@ -120,7 +139,7 @@ nav mat-icon {
     border-radius: 5px;;
   }
   .allPages {
-    margin-top: 66px;
+    margin-top: 185px;
 }
 .dropdown-toggle::after {
     display: none;

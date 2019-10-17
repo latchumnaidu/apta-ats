@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-update-profile',
@@ -8,12 +9,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./update-profile.component.scss']
 })
 export class UpdateProfileComponent implements OnInit {
-
+  plans = [
+    {plan: 'Free Trial', cost: '0', valid: '1 Day' },
+    {plan: 'Standard', cost: '750', valid: '3 Mon'},
+    {plan: 'Business', cost: '1250', valid: '6 Mon'}
+  ];
+  selectedPlan;
   adminDashboardForm: FormGroup;
   paymentForm: FormGroup;
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private modalService: NgbModal,
   ) { }
 
   ngOnInit() {
@@ -62,5 +69,11 @@ export class UpdateProfileComponent implements OnInit {
   }
   home() {
     this.router.navigate(['./admin/home']);
+  }
+  planView(item) {
+    this.selectedPlan = item;
+  }
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
   }
 }

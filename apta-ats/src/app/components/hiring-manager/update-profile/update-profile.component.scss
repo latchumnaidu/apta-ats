@@ -143,3 +143,133 @@
     border-bottom: 1px solid #707070;
     padding-bottom: 5px;
   }
+  .payment-card {
+    label {color: white;}
+    background: #848484;
+    border-radius: 15px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+    
+    input {
+      border: none;
+      border-radius: 18px;
+      color: white;
+      background-color: #535353;
+      font-size: 14px;
+      height: 39px;
+    }
+    input:focus, select:focus {
+      outline:none;
+    }
+    input::placeholder, select::placeholder {
+      color: white;
+      padding-left: 10px;
+    }
+    select {
+      color: white;
+      background-color: #535353;
+      height: 39px;
+    }
+    .month-select {
+      border-radius: 1.25rem;
+      border: 1px solid #707070;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .select-plan {
+      border: none;
+      border-radius: 18px;
+      h6 { color: white;}
+      background-color: #292727;
+      font-size: 16px;
+      height: 60px;
+      padding-top: 8px;
+    }
+  }
+  .subscription-card {
+    min-height: 350px;
+    max-width: 356px;
+    margin-top: 20px;
+    background: white;
+    border-radius: 18px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 10px 4px #aaaaaa;
+    h1 {
+      color: #014D54;
+      font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    font-family: century gothic;
+    }
+    h5 {
+      font-size: 23px;
+      color: #494C4F;
+      margin-top: 20px;
+      font-family: Century Gothic;
+    }
+    h3 {
+      font-size: 20px;
+      color: white !important;
+      margin-bottom: 6px;
+    }
+    h6 {
+      margin-top: 20px;
+    }
+    &_button {
+      background: #0B8292;
+      border: #0B8292;
+      color: white;
+      border-radius: 15px;
+      padding: 5px 30px;
+    }
+  }
+  .outer-circle{
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    // border: 1px solid #707070;
+    background: white;
+    box-shadow: 0px 0px 10px 4px #aaaaaa;
+    padding: 10px;
+  }
+  .inner-circle{
+    height: 110px;
+    width: 110px;
+    border-radius: 50%;
+    // border: 1px solid #707070;
+    box-shadow: 0px 0px 7px 2px #aaaaaa;
+    background: white;
+    padding: 8px;
+    p {
+      text-align: center;
+      color: #666666;
+      font-size: 13px;
+      margin-bottom: 0.4rem;
+    }
+  }
+  .payment-head {
+    color: #727272;
+    font-size: 30px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+  mat-checkbox {
+    color: white;
+  }
+  .otp-fields {
+    padding-left: 15px;
+    letter-spacing: 42px;
+    border: 0;
+    background-image: linear-gradient(to left,      black 70%, rgba(255, 255, 255, 0) 0%);
+    background-position: bottom;
+    background-size: 50px 1px;
+    background-repeat: repeat-x;
+    background-position-x: 39px;
+  }
+  .seperator {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 30px;
+    font-weight: 600;
+    color: #707070;
+}

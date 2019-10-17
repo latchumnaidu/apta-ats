@@ -2,7 +2,7 @@
 
     <mat-horizontal-stepper [linear]="isLinear" #stepper>
         <mat-step [stepControl]="adminDashboardForm">
-            <form [formGroup]="adminDashboardForm" >
+            <form [formGroup]="adminDashboardForm">
                 <ng-template matStepLabel>Update Account</ng-template>
                 <div class="row ">
                     <div class="col-sm-12 p-l-r">
@@ -47,7 +47,7 @@
                             <!-- langulage-->
                             <div class=" mb-3 m-t-sm ">
                                 <label for="lang" class="d-block">Language</label>
-                                <select class="form-rounded p-xs" formControlName="language">
+                                <select class="form-rounded p-xs" formControlName="language" required>
                                     <option value="1">English</option>
                                     <option value="2">Hindi</option>
                                     <option value="3">Telugu</option>
@@ -128,11 +128,12 @@
                                 <div *ngIf="form.location.errors.required">* This field is required</div>
                             </div>
                         </div>
-                        <div class="row p-l-r align-items-center">
+                        <div class="row align-items-center">
                             <!-- company name -->
-                            <div class="m-r mb-3 m-t-sm w-25">
+                            <div class="m-r mb-3 m-t-sm col-md-5">
                                 <label for="location" class="d-block">Address</label>
-                                <textarea class="form-rounded p-2" formControlName="location" id="location"></textarea>
+                                <textarea class="form-rounded p-2 w-100" formControlName="location"
+                                    id="location"></textarea>
                             </div>
                             <div *ngIf="submitted && form.location.errors" class="text-red text-left m-t-n-sm">
                                 <div *ngIf="form.location.errors.required">* This field is required</div>
@@ -150,34 +151,171 @@
             </form>
         </mat-step>
         <mat-step [stepControl]="paymentForm">
-            <form [formGroup]="paymentForm" >
+            <form [formGroup]="paymentForm">
                 <ng-template matStepLabel>Payment Details</ng-template>
-                <div class=" mb-3 m-t-sm col-sm-3">
-                        <label for="location" class="d-block">Card Holder Name </label>
-                        <input type="text" class="form-rounded p-2" formControlName="card_name" id="location">
-                    </div>
-                    <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
-                        <div *ngIf="form.card_name.errors.required">* This field is required</div>
-                    </div>
-                    <div class=" mb-3 m-t-sm col-sm-3">
-                            <label for="location" class="d-block">Card Number  </label>
-                            <input type="text" class="form-rounded p-2" formControlName="card_name" id="location">
+                <div class="row justify-content-between">
+                    <div class="col-sm-12 col-lg-5 col-md-5 d-flex justify-content-center" *ngIf="!selectedPlan">
+
+                        <div>
+                            <p class="payment-head">Payment Details</p>
+                            <mat-card class="payment-card">
+                                <div class=" mb-3 m-t-sm col-sm-10">
+                                    <label for="location" class="d-block">Card Holder Name </label>
+                                    <input type="text" class="form-rounded p-2 w-100" formControlName="card_name"
+                                        id="location">
+                                </div>
+                                <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
+                                    <div *ngIf="form.card_name.errors.required">* This field is required</div>
+                                </div>
+                                <div class=" mb-3 m-t-sm col-sm-10">
+                                    <label for="location" class="d-block">Card Number </label>
+                                    <input type="text" class="form-rounded p-2 w-100" formControlName="card_name"
+                                        id="location">
+                                </div>
+                                <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
+                                    <div *ngIf="form.card_name.errors.required">* This field is required</div>
+                                </div>
+                                <div class="m-r d-flex justify-content-between col-sm-10 p-l-0">
+                                    <div class="col-sm-8">
+                                        <label for="phone" class="d-block">Card Validity</label>
+                                        <div class="input-group ">
+                                            <div class="w-50 input-group-prepend">
+                                                <select class="w-100 input-group-text" formControlName="validity"
+                                                    placeholder='Month'>
+                                                    <option value="1">Jan</option>
+                                                    <option value="2">Feb</option>
+                                                    <option value="3">Mar</option>
+                                                </select>
+                                            </div>
+                                            <select class="month-select w-50 p-2" formControlName="validity"
+                                                placeholder='Year'>
+                                                <option value="1">2019</option>
+                                                <option value="2">2020</option>
+                                                <option value="3">2021</option>
+                                            </select>
+                                        </div>
+                                        <div *ngIf="submitted && form.validity.errors"
+                                            class="text-red text-left m-t-n-sm">
+                                            <div *ngIf="form.validity.errors.required">* This field is required</div>
+                                        </div>
+                                    </div>
+                                    <div class=" col-sm-4">
+                                        <label for="location" class="d-block">CVV </label>
+                                        <div class="input-group">
+                                            <input type="number" maxlength="3" class="form-rounded p-2 w-100"
+                                                formControlName="cvv" id="location">
+                                        </div>
+                                    </div>
+                                    <div *ngIf="submitted && form.cvv.errors" class="text-red text-left m-t-n-sm">
+                                        <div *ngIf="form.cvv.errors.required">* This field is required</div>
+                                    </div>
+
+                                </div>
+                                <div class=" mb-3 m-t-sm col-sm-10 ">
+                                    <div class="d-flex justify-content-center align-items-center select-plan">
+                                        <h6 class="text center ">Select A Plan</h6>
+                                        <div class="d-none">
+                                            <h6 class="text center">Free Trail Plan</h6>
+                                            <h6 class="text center">Validity: &nbsp; 1 Day</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" mb-3 m-t-sm col-sm-10 ">
+                                    <mat-checkbox>Save Card Details</mat-checkbox>
+                                </div>
+                                <div class=" mb-3 m-t-sm col-sm-10 ">
+                                    <button class="custom-button" (click)="openVerticallyCentered(content)">Pay</button>
+                                </div>
+                            </mat-card>
                         </div>
-                        <div *ngIf="submitted && form.card_name.errors" class="text-red text-left m-t-n-sm">
-                            <div *ngIf="form.card_name.errors.required">* This field is required</div>
+                    </div>
+                    <div class="col-sm-12 col-lg-5 col-md-5 d-flex justify-content-center" *ngIf="selectedPlan">
+                        <mat-card class="subscription-card">
+                            <h1 class="text-center">{{selectedPlan.plan}}</h1>
+                            <div class="d-flex justify-content-center">
+                                <div class="subscription-card_button">
+                                    <h3 class="text-center m-t-xs">${{selectedPlan.cost}}</h3>
+                                    <h3 class="text-center">{{selectedPlan.valid}}</h3>
+                                </div>
+                            </div>
+                            <div *ngIf="selectedPlan.plan === 'Free Trial'">
+                                <h5 class="text-center">Post up to 5 jobs</h5>
+                                <h5 class="text-center">Score results for up to 5 CV's</h5>
+                            </div>
+                            <div *ngIf="selectedPlan.plan === 'Standard'">
+                                <h5 class="text-center">Unlimited job postings</h5>
+                                <h5 class="text-center">Custom job application link to
+                                    accept direct applications</h5>
+                                <h5 class="text-center">Multi-CV upload and custom
+                                    'CV database' module</h5>
+                            </div>
+                            <div *ngIf="selectedPlan.plan === 'Business'">
+                                <h5 class="text-center font-weight-bold">STANDARD</h5>
+                                <h5 class="text-center font-weight-bold">+</h5>
+                                <h5 class="text-center">Schedule interviews</h5>
+                                <h5 class="text-center">Application status information</h5>
+                                <h5 class="text-center">Compare applicant profiles</h5>
+                            </div>
+                            <h6 class="text-center">
+                                <button class="custom-button" (click)="selectedPlan = null">Select</button>
+                            </h6>
+                        </mat-card>
+                    </div>
+                    <ng-template #content let-modal>
+
+                        <div class="modal-body">
+                            <p class="text-center">An OTP has been sent to your registered</p>
+                            <p class="text-center"> Mobile Number</p>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <div class="d-flex justify-content-between align-items-center col-sm-10 m-t-sm m-b-sm">
+                                    <input type="text" class="otp-fields" maxlength="6">
+                                    <span class="seperator"> | </span>
+                                    <a>Resend OTP</a>
+                                </div>
+                            </div>
+                            <p class="text-center"><a>Resend OTP in 60 Sec</a></p>
+                            <p class="text-center">
+                                <button class="custom-button" (click)="modal.close('Close click')" mat-button
+                                    matStepperNext>OK</button>
+                            </p>
                         </div>
-                <div class="d-flex col-sm-3 justify-content-between">
-                    <button mat-button matStepperPrevious class="custom-button">Back</button>
-                    <button mat-button matStepperNext class="custom-button">Save and Continue</button>
+
+                    </ng-template>
+                    <div class="col-md-7 col-lg-6 col-sm-7 d-flex justify-content-start align-items-center">
+                        <div>
+                            <p class="payment-head">Subscription Plans</p>
+                            <div class="row justify-content-between align-items-center  m-r-sm">
+                                <div *ngFor="let item of plans" class="col-sm-4">
+                                    <div class="outer-circle">
+                                        <div class="inner-circle d-flex justify-content-center align-items-center">
+                                            <div>
+                                                <p></p>
+                                                <p class="font-weight-bold">{{item.plan}}</p>
+                                                <p>${{item.cost}}</p>
+                                                <p>${{item.valid}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="text-center m-t">
+                                        <button class="custom-button" (click)="planView(item)">View</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex col-sm-4 col-lg-3 justify-content-between">
+                    <!-- <button mat-button matStepperPrevious class="custom-button">Back</button> -->
+                    <!-- <button mat-button matStepperNext class="custom-button">Save and Continue</button> -->
                 </div>
             </form>
         </mat-step>
         <mat-step>
             <ng-template matStepLabel>Done</ng-template>
             You are now done.
-            <div class="d-flex col-sm-2 justify-content-between">
-                <button mat-button matStepperPrevious class="custom-button">Back</button>
-                <button mat-button (click)="stepper.reset()" class="custom-button">Reset</button>
+            <div class="d-flex col-sm-4 col-lg-3 justify-content-between">
+                <button mat-button matStepperPrevious class="custom-button">All Done!</button>
+                <!-- <button mat-button (click)="stepper.reset()" class="custom-button">Reset</button> -->
             </div>
         </mat-step>
     </mat-horizontal-stepper>
