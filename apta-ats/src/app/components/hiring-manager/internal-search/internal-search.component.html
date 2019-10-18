@@ -1,0 +1,88 @@
+<div class="col-sm-10 justify-content-end m-t-xs m-w-940 offset-sm-2 row align-items-center">
+        <div class="col-md-12">
+          <mat-form-field class="w-100">
+            <input matInput  placeholder="Search for Mails">
+            <mat-icon matPreffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="col-sm-12 justify-content-end m-b m-w-940  row align-items-center">
+            <div class="d-flex">
+                <button class="filter d-flex">
+                        <span class="m-r-sm">Email</span>
+                        <mat-icon> email</mat-icon>
+                </button>
+                <button class="filter">
+                        <span>Compare</span>
+                </button>
+                <button class="filter d-flex">
+                        <span class="m-r-sm">Resume</span>
+                        <mat-icon>cloud_upload</mat-icon>
+                </button>
+            </div>
+          </div>
+      <div class="row m-l-sm m-b-xl">
+          <div class="col-sm-2 border-right mail-sidebar">
+                <!-- <button class="d-flex justify-content-around compose">
+                        <mat-icon>add</mat-icon>
+                        <span>Compose</span>
+                </button> -->
+                <div class="sub-heads   d-flex"><mat-icon class="m-r-sm">filter_list</mat-icon> <span>FilterBy</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Roles</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Clients</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Submitted</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Rejected</span>  </div>
+                <div class="mail-heading  d-flex m-b"><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Date</span>  </div>
+                <div class="sub-heads  d-flex"> <span>Created By You</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>JB Morgan</span>  </div>
+                <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Prabhakar</span>  </div>
+
+              
+          </div>
+          <div class="col-sm-9 mail-box border-right">
+                <div class=" d-flex justify-content-between" >
+                        <div class="col-sm-2 d-flex justify-content-between align-items-center">
+                             <span class="mail-heading ">Job ID</span>
+                        </div>
+                      <div class="col-sm-10 d-flex align-items-center justify-content-between">
+                            <span class="mail-heading ">Name & Role</span>
+                            <span class="mail-heading ">Received At</span>
+                            <span class="mail-heading ">Application Status</span>
+                            <span class="mail-heading ">Score</span>
+                            <span class="mail-heading  text-white">view application</span>
+                          </div>
+                </div>
+              <div class="mails d-flex justify-content-between" *ngFor="let item of names">
+                    <div class="col-sm-2 d-flex justify-content-between align-items-center">
+                            <mat-checkbox></mat-checkbox>
+                            <span>01732</span>
+                            <img src="../../../../assets/man.png" style="    height: 40px;">
+                    </div>
+                  <div class="col-sm-10 d-flex align-items-center justify-content-between">
+                      <div class=" mail-heading">
+                          <span class=" d-block">{{item}}</span>
+                          <span class="d-block">Java Developer</span>
+                      </div>
+                      <div class=" mail-heading">
+                          <span class="d-block d-flex "><mat-icon>access_time</mat-icon> 12:00 PM</span>
+                          <span class="d-block ">24 SEP 2019</span>
+                      </div>
+                      <div>
+                            <div class="filter rejected">
+                                    <span class="d-block">Rejected In</span>
+                                    <span class="d-block">Phone Interview</span>
+                                </div>
+                      </div>
+                      <div class="text-center">
+                          <button class="filter rounded-circle d-inline-block percentage">
+                              81%
+                          </button>
+                          <span class="d-block text-center">Report</span>
+                      </div>
+                      <div>
+                            <button class="compose">View Application</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>

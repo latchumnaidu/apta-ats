@@ -1,4 +1,136 @@
-<h4 class="heading m-l m-t-sm">Active Jobs</h4>
-<div class="container-fluid nodata m-t-sm position-relative">
-    <img src="../../../../assets/manage-recruit.png" (click)="manageRecruiters()" class="position-absolute">
+<div [ngClass]="{'d-none': fromRecruiter}">
+        <h4 class="heading m-l m-t-sm">Active Jobs</h4>
+        <div class="container-fluid nodata m-t-sm position-relative">
+            <img src="../../../../assets/manage-recruit.png" (click)="manageRecruiters()" class="position-absolute">
+        </div>
+</div>
+<div [ngClass]="{'d-none': !fromRecruiter}">
+        <div class="row  justify-content-between p-l-r-30 m-t-sm">
+                <h4 class="heading m-l m-t-sm">Active Jobs</h4>
+                <button class="custom-button d-flex justify-content-between align-items-center">
+                    <mat-icon>add</mat-icon> &nbsp;&nbsp;
+                    Manage Recruiters
+                </button>
+        </div>
+        <div class="bg-card">
+            <mat-card class="payment-card" *ngFor="let item of JobList">
+                <div class="row m-b-sm">
+                    <div class="col-sm-6 d-flex">
+                        <h4>{{item}} Developer</h4>
+                        <div class="button b2" id="button-10">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs">
+                                  <span>Active</span>
+                                </div>
+                                <div class="layer"></div>
+                              </div>
+                    </div>
+                    <div class="col-sm-5 d-flex justify-content-around">
+                            <select class="form-control" placeholder="Assigned To">
+                                    <option>Recruiter1</option>
+                                    <option>Recruiter2</option>
+                                    <option>Recruiter3</option>
+                                    <option>Recruiter4</option>
+                                    <option>Recruiter5</option>
+                                  </select>
+                                  <button class="white-btn">View</button>
+                                  <button class="white-btn">Edit</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 d-flex">
+                        <div>
+                            <h6>Posted On: <span>25 Aug 2019</span></h6>
+                            <h6>C2C: <span>$150/hr</span></h6>
+                        </div>
+                        <div>
+                                <h6>Validity: <span>10 Nov 2019</span></h6>
+                                <h6>Location: <span> Chantilly, Virginia</span></h6>
+                            </div>
+                    </div>
+                    <div class="col-sm-6 d-flex justify-content-around align-items-center">
+                            <div>
+                                    <h6>Applications Recieved: <span>19</span></h6>
+                                    <h6>Hired: <span> 4</span></h6>
+                                </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                            <h6>Reviews on Job:
+                                 <span> C2C is very low for Virginia Location. Better If we provide Remote option or increase the C2C</span></h6>
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+        <div class="p-l-r-30 applications">
+                <div class="row m-t-sm m-b-lg">
+                        <div class="col-sm-8">
+                            <div class="row applications_heading  justify-content-between">
+                                <h3>New Applications Recieved</h3>
+                                <input type="text" class="custom-input" placeholder="Search">
+                            </div>
+                            <ul>
+                                <li class="d-flex align-items-baseline">
+                                        <span >&#9679;</span>
+                                    <p>Naveen Shaga Applied for UX Designer</p>
+                                    <p><button>View</button></p>
+                                </li>
+                                <li class="d-flex align-items-baseline">
+                                        <span >&#9679;</span>
+                                        <p>Naveen Shaga Applied for UX Designer</p>
+                                        <p><button>View</button></p>
+                                    </li>
+                                    <li class="d-flex align-items-baseline">
+                                            <span >&#9679;</span>
+                                            <p>Naveen Shaga Applied for UX Designer</p>
+                                            <p><button>View</button></p>
+                                        </li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                            <div class="applications_activities">
+                                <h4>Recent Timeline</h4>
+                                <!-- <p class="text-center"><button>Start Making Activities</button></p> -->
+                                <div>
+                                      <!-- completed -->
+            <div class="step completed">
+                    <div class="v-stepper">
+                      <div class="circle"></div>
+                      <div class="line"></div>
+                    </div>
+              
+                    <div class="content">
+                      Joined On 21 feb 2019
+                    </div>
+                </div>
+                
+                <!-- active -->
+                 <!-- completed -->
+                  <div class="step completed">
+                    <div class="v-stepper">
+                      <div class="circle"></div>
+                      <div class="line"></div>
+                    </div>
+              
+                    <div class="content">
+                      Conduct seminar on 30 mar 2019
+                    </div>
+                </div>
+                <!-- completed -->
+                <div class="step completed">
+                        <div class="v-stepper">
+                          <div class="circle"></div>
+                          <div class="line"></div>
+                        </div>
+                  
+                        <div class="content">
+                          Conduct seminar on 30 mar 2019
+                        </div>
+                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        </div>
 </div>

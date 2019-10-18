@@ -11,7 +11,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { RecruitersComponent } from './recruiters/recruiters.component';
 import { AddRecruitersComponent } from './recruiters/add-recruiters/add-recruiters.component';
 import { AllRecruitersComponent } from './recruiters/all-recruiters/all-recruiters.component';
-
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { AgmCoreModule } from '@agm/core';
+import { InboxComponent } from './inbox/inbox.component';
+import { TemplateComponent } from './template/template.component';
+import { InternalSearchComponent } from './internal-search/internal-search.component';
 @NgModule({
     declarations: [
         HiringManagerComponent,
@@ -19,7 +23,11 @@ import { AllRecruitersComponent } from './recruiters/all-recruiters/all-recruite
         DashboardComponent,
         RecruitersComponent,
         AddRecruitersComponent,
-        AllRecruitersComponent
+        AllRecruitersComponent,
+        ContactUsComponent,
+        InboxComponent,
+        TemplateComponent,
+        InternalSearchComponent
     ],
     imports: [
         CommonModule,
@@ -29,6 +37,9 @@ import { AllRecruitersComponent } from './recruiters/all-recruiters/all-recruite
         ReactiveFormsModule,
         NgbModule,
         DemoMaterialModule,
+        AgmCoreModule.forRoot({
+            apiKey: ''
+          })
     ]
 })
 export class HiringManagerModule {}

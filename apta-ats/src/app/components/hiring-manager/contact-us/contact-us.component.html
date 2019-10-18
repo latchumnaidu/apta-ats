@@ -1,0 +1,26 @@
+<div class="m-t-sm p-l-r-30">
+    <div class="row">
+        <div class="col-sm-7 contact">
+            <h2>Company Details</h2>
+            <h5>Company Name: <span>Aptagrim Consulting LLP</span></h5>
+            <h5>Contact Number: <span>888-222-222</span></h5>
+            <h5 class="d-flex">
+                <a>Address: </a>
+                <a>
+                    <span> No.2, Level, Plot No.200,</span>
+                    <span>Survey, 6, Mythri Nagar,</span>
+                    <span>Madinaguda, Hyderabad,</span>
+                    <span>Telangana 500050</span>
+                </a>
+            </h5>
+            <h5>Website: <span>aptagrim.com</span></h5>
+            <h3>Google Location:</h3>
+            <agm-map [latitude]="lat" [longitude]="lng">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                  </agm-map>
+        </div>
+        <div class="col-sm-5 d-flex image justify-content-end">
+            <img src="../../../../assets/contact.png" class="w-100">
+        </div>
+    </div>
+</div>

@@ -6,7 +6,6 @@ import { AdminRouterModule } from './admin-routing.module';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DemoMaterialModule } from 'src/app/material-module';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminSettingsComponent } from './admin-settings/admin-settings.component';
 import { AdminFeedbackComponent } from './admin-feedback/admin-feedback.component';
@@ -16,6 +15,7 @@ import { AdminUsersComponent } from './admin-users/admin-users.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminSubscriptionComponent } from './admin-subscription/admin-subscription.component';
 import { AdminVisitorsComponent } from './admin-visitors/admin-visitors.component';
+import {DemoMaterialModule} from '../../material-module';
 
 @NgModule({
     declarations: [

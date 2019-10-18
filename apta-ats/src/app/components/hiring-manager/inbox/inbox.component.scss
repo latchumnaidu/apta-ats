@@ -1,0 +1,49 @@
+.filter {
+    margin-right: 10px;
+    color: #353E40;
+    background-color: white;
+    box-shadow: 0px 0px 4px 2px rgba(97, 95, 95, 0.85);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    mat-icon {
+        margin-right: 5px;
+    }
+  }
+  .compose {
+    color: white;
+    background-color: #353E40;
+    border: 1px solid #353E40;
+    border-radius: 5px;
+    cursor: pointer; 
+    mat-icon {
+        color: white;
+    }
+  }
+  .mails {
+    background-color:#FFFFFF;
+    padding: 10px 15px;
+    border-radius: 19px;
+    box-shadow: 0px 0px 5px rgba(97, 95, 95, 0.85);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .mail-box {
+      height: 350px;
+      overflow: scroll;
+      overflow-x: hidden;
+  }
+  .mail-options {
+    margin-top: 10px;
+    font-size: 13px;
+  }
+  .mail-heading {
+    font-size: 17px;
+    color: #707070;
+  }
+  .mail-sidebar div {
+    margin-top: 5px;
+  }
+  ::ng-deep .mat-form-field-flex {
+    border-bottom: 2px solid #707070;
+  }

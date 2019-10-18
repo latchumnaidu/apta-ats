@@ -1,0 +1,56 @@
+<div class="col-sm-10 justify-content-end m-t-xs m-w-940 offset-sm-2 row align-items-center">
+        <div class="col-md-9">
+          <mat-form-field class="w-100">
+            <input matInput  placeholder="Search for Mails">
+            <mat-icon matSuffix>search</mat-icon>
+          </mat-form-field>
+        </div>
+        <div class="col-md-3 ">
+            <button class="d-flex justify-content-around filter">
+                    <mat-icon>filter_list</mat-icon>
+                    <span>Filter By</span>
+            </button>
+        </div>
+      </div>
+      <div class="row m-l-sm m-b-xl">
+          <div class="col-sm-2 border-right mail-sidebar">
+                <button class="d-flex justify-content-around compose">
+                        <mat-icon>add</mat-icon>
+                        <span>Compose</span>
+                </button>
+                <div class="mail-heading font-weight-bold">Inbox &nbsp; &nbsp;  1</div>
+                <div>Sent</div>
+                <div>Draft</div>
+                <div>Important &nbsp; &nbsp; 3</div>
+                <div><button class=" compose">
+                        <span>Forward Mails</span>
+                </button></div>
+                <div>Forward To</div>
+                <div>Received</div>
+                <div><button class=" compose">
+                        <span>Create Folder</span>
+                </button></div>
+          </div>
+          <div class="col-sm-9 mail-box border-right">
+              <div class="mails d-flex justify-content-between" *ngFor="let item of names">
+                    <div class="col-sm-1 d-flex justify-content-between align-items-center">
+                            <mat-checkbox></mat-checkbox>
+                            <mat-icon style="    font-size: 19px;">star_border</mat-icon>
+                    </div>
+                  <div class="col-sm-11">
+                      <div class="d-flex justify-content-around mail-heading">
+                          <span class="font-weight-bold">{{item}}</span>
+                          <span class="font-weight-bold">Java Developer &nbsp; &nbsp; Submission</span>
+                          <span>Hi User, you are assigned to new job. Please check</span>
+                          <span>12:00 PM</span>
+                      </div>
+                      <div class="d-flex justify-content-between col-sm-7 col-lg-5 mail-options">
+                          <button class="filter">Reply</button>
+                          <button class="filter">Forward</button>
+                          <button class="filter">Move To</button>
+                          <button class="filter">Delete</button>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>

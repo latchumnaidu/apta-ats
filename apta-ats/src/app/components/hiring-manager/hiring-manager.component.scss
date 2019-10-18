@@ -130,6 +130,7 @@ nav mat-icon {
 
 .bg-nav_menu {
     background: linear-gradient(to bottom right , rgba(56,56,56,100%),rgba(36,129,142,100%) );
+    z-index: 999 !important;
 }
 ::ng-deep.mat-radio-outer-circle {
     border-color: #707070;
@@ -141,6 +142,27 @@ nav mat-icon {
   .allPages {
     margin-top: 185px;
 }
+.filter {
+    margin-right: 10px;
+    color: #353E40;
+    background-color: white;
+    box-shadow: 0px 0px 4px 2px rgba(97, 95, 95, 0.85);
+    border-radius: 5px;
+    cursor: pointer;
+    border: 0;
+    mat-icon {
+        margin-right: 5px;
+    }
+  }
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: unset;
+    right: 0; 
+    width: 332px;
+    background: linear-gradient(to bottom,  rgba(36,129,142,100%) , rgba(14,94,104,100%), );
+    padding: 6px 15px;
+  }
 .dropdown-toggle::after {
     display: none;
 }
@@ -235,7 +257,6 @@ nav mat-icon {
         color: white !important;
         margin-bottom: 10px;
         font-size: 13px !important;
-        font-family: century gothic;
         text-align: center !important;
       }
   }
@@ -250,11 +271,11 @@ nav mat-icon {
     border-radius: 9px;
     cursor: pointer;
     h6 {
-        font-size: 13px;
+        font-size: .9vw;
         margin-top: -10px;
     }
     h5{
-        font-size: 14px;
+        font-size: 1vw;
     }
 }
 .scroll-content {
@@ -262,4 +283,16 @@ nav mat-icon {
 }
 .nav-opacity {
 opacity: .5;
+}
+.ribbons {
+    margin-top: 6vw;
+    p {
+        color: white;
+    }
+    button {
+        color: #FFFFFF;
+        background-color: #282525;
+        border: 1px solid #383838;
+        font-size: 1vw;
+    }
 }

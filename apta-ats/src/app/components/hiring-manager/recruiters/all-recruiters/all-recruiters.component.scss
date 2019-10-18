@@ -1,0 +1,80 @@
+@import '../../update-profile/update-profile.component.scss';
+.payment-card {
+    label {color: #848484;}
+    background: white;
+    border-radius: 15px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+ h2 {
+     font-size: 16px;
+     color: #636060;
+     span {
+        font-size: 18px;
+        font-weight: bold;
+     }
+ }
+
+  }
+  .custom-button {
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+    font-size: 1.1vw;
+  }
+  .subscribe-card {
+    background: white;
+    padding: 20px;
+    padding-top: 0;
+    border-radius: 15px;
+  }
+  .subscription-card {
+      box-shadow: none;
+  }
+  .profile_icon {
+    box-shadow: 0px 4px 6px 1px rgba(97, 95, 95, 0.85);
+    color: #353F41;
+    font-size: 30px;
+    height: 83px;
+    width: 83px;
+    border-radius: 50%;
+    padding: 10px;
+    mat-icon {
+      font-size: 62px;
+  }
+  &_sub{
+    border: 1px solid #707070;
+    box-shadow: 0px 4px 6px -2px rgba(97, 95, 95, 0.85);
+    color: #353F41;
+    font-size: 10px;
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    padding: 7px 6px;
+    background: white;
+    bottom: 9px;
+    right: -15px;
+    mat-icon {
+      font-size: 22px;
+    }
+}
+}
+.subscription-card_button {
+  background: #383838;
+  border: #383838;
+}
+.subscription-card h1{
+  color: #383838;
+}
+.rounded-circle {
+    height: 50px;
+    width: 50px;
+}
+@media (max-width: 1120px) { 
+    .col-md-4 {
+        max-width: 50%;
+    }
+ }
+ @media (min-width: 990px) { 
+    .col-md-4 {
+        max-width: 55%;
+    }
+ }

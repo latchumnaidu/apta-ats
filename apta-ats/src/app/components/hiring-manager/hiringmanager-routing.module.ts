@@ -1,3 +1,7 @@
+import { InternalSearchComponent } from './internal-search/internal-search.component';
+import { TemplateComponent } from './template/template.component';
+import { InboxComponent } from './inbox/inbox.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 import { AllRecruitersComponent } from './recruiters/all-recruiters/all-recruiters.component';
 import { AddRecruitersComponent } from './recruiters/add-recruiters/add-recruiters.component';
 import { RecruitersComponent } from './recruiters/recruiters.component';
@@ -12,6 +16,10 @@ const routes: Routes  = [
         {path: 'update-profile', component: UpdateProfileComponent},
         {path: '', redirectTo : 'update-profile', pathMatch: 'full' },
         {path: 'dashboard', component: DashboardComponent},
+        {path: 'contact', component: ContactUsComponent},
+        {path: 'inbox', component: InboxComponent},
+        {path: 'internalSearch', component: InternalSearchComponent},
+        {path: 'template', component: TemplateComponent},
         {path: 'recruiters', component: RecruitersComponent,
         children: [
             {path: 'add', component: AddRecruitersComponent},

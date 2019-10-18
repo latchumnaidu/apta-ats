@@ -1,4 +1,5 @@
 @import '../admin-mail/admin-mail.component.scss';
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 .long-btns {
     border: 1px solid #424242;
     background: #424242;
@@ -9,10 +10,13 @@
     cursor: pointer;
     h6 {
         margin-bottom: 5px;
+        font-size: 1vw;
     }
 }
 .chat {
-    padding: 0px 2px 0px 9px;
+    height: 30px;
+    width: 30px;
+    padding-top: 3px;
     border: 1px solid white;
     box-shadow: 0px 0px 4px 2px rgba(97, 95, 95, 0.85);
     border-radius: 50%;
@@ -20,12 +24,15 @@
     mat-icon {
         font-size: 18px;
     }
+    img {
+        height: 20px !important;
+    }
 }
 .compose {
-    font-size: 18px;
+    font-size: 1.3vw;
 }
 .heading1 {
-    font-size: 18px;
+    font-size: 1.3vw;
     font-weight: bold;
     color: #707070;
 }
@@ -45,4 +52,7 @@
 }
 * {
     font-family: century Gothic ;
+}
+.mails img {
+    height: 6vw;
 }

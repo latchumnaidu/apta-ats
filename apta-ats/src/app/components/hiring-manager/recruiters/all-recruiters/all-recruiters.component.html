@@ -5,9 +5,36 @@
           </mat-form-field>
         </div>
             <div class="col-md-2">
-                <button class="d-flex justify-content-around
+                <button class="d-flex justify-content-around text-white main-btn-size
                  compose rounded-0 p-sm-2" (click)="addRecruiters()">
                     Add Recruiters
                 </button>
             </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-5 col-md-4 " *ngFor="let item of allRecruiters">
+            <!-- *ngFor="let item of allRecruiters" -->
+            <mat-card class="payment-card" >
+              <div class="row justify-content-between">
+                <div class="col-sm-3 d-flex align-items-center">
+                  <img src="{{item.img}}" class="rounded-circle">
+                </div>
+                <div class="col-sm-6">
+                  <h2><span>Name:</span> {{item.name}}</h2>
+                  <h2><span>Role:</span>{{item.role}}</h2>
+                </div>
+                <div class="col-sm-3 text-right">
+                  <button class="custom-button rounded">Edit</button>
+                </div>
+              </div>
+              <div class="row m-t-sm m-b-sm">
+                <div class="col-sm-6">
+                    <button class="custom-button rounded">Assign Tasks</button>
+                </div>
+                <div class="col-sm-6">
+                    <button class="custom-button rounded">Track Work Status</button>
+                </div>
+              </div>
+              </mat-card>
+        </div>
       </div>

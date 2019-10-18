@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { DataShareService } from 'src/app/data-share.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as $ from 'jquery';
@@ -9,8 +10,11 @@ import { Subscription } from 'rxjs';
 })
 export class HiringManagerComponent implements OnInit, OnDestroy {
   updateProfile = false;
-
-  constructor(private dataShare: DataShareService) { }
+  notifications = ['02:19 PM', '03:19 PM', '04:19 PM', '05:19 PM', '06:19 PM', '07:19 PM', ];
+  constructor(
+    private dataShare: DataShareService,
+    private router: Router
+    ) { }
 subscription: Subscription;
   ngOnInit() {
     this.toggle();
@@ -18,7 +22,25 @@ subscription: Subscription;
       this.updateProfile = res;
     });
   }
-  home() {}
+  home() {
+    this.router.navigate(['./hiring-manager/dashboard']);
+    this.dataShare.setData(true);
+  }
+  contact() {
+    this.router.navigate(['./hiring-manager/contact']);
+  }
+  inbox() {
+    this.router.navigate(['./hiring-manager/inbox']);
+  }
+  internalSearch() {
+    this.router.navigate(['./hiring-manager/internalSearch']);
+  }
+  template() {
+    this.router.navigate(['./hiring-manager/template']);
+  }
+  signOut() {
+    this.router.navigate(['./login']);
+  }
   toggle() {
     $('#menu-toggle').click((e) => {
       e.preventDefault();

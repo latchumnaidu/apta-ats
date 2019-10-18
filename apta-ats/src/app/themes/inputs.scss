@@ -7,18 +7,18 @@
 // }
 // custom style input
 
-// input[type='text'] {
-//     padding: 16px!important;
-//     border: none;
-//     border-radius: 0;
-//     color: #6b6b6b;
-//     background-color: #eee;
-//     font-size: 14px;
-//     border-radius: 5px;
-// }
-// input[type='text']:focus {
-//   outline:none;
-// }
+.custom-input {
+    padding: 16px!important;
+    border: none;
+    border-radius: 0;
+    color: white;
+    background-color: #353A3B;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.custom-input :focus {
+  outline:none;
+}
 .form-rounded {
     border-radius: 1rem;
 }
