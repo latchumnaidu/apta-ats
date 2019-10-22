@@ -16,6 +16,10 @@ import { AgmCoreModule } from '@agm/core';
 import { InboxComponent } from './inbox/inbox.component';
 import { TemplateComponent } from './template/template.component';
 import { InternalSearchComponent } from './internal-search/internal-search.component';
+import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './profile/profile.component';
+import { JobsComponent } from './jobs/jobs.component';
 @NgModule({
     declarations: [
         HiringManagerComponent,
@@ -27,7 +31,11 @@ import { InternalSearchComponent } from './internal-search/internal-search.compo
         ContactUsComponent,
         InboxComponent,
         TemplateComponent,
-        InternalSearchComponent
+        InternalSearchComponent,
+        FeedbackPageComponent,
+        SettingsComponent,
+        ProfileComponent,
+        JobsComponent
     ],
     imports: [
         CommonModule,

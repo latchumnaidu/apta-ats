@@ -16,6 +16,7 @@ import { AdminProfileComponent } from './admin-profile/admin-profile.component';
 import { AdminSubscriptionComponent } from './admin-subscription/admin-subscription.component';
 import { AdminVisitorsComponent } from './admin-visitors/admin-visitors.component';
 import {DemoMaterialModule} from '../../material-module';
+import { GiveFeedbackComponent } from './give-feedback/give-feedback.component';
 
 @NgModule({
     declarations: [
@@ -29,7 +30,8 @@ import {DemoMaterialModule} from '../../material-module';
         AdminUsersComponent,
         AdminProfileComponent,
         AdminSubscriptionComponent,
-        AdminVisitorsComponent
+        AdminVisitorsComponent,
+        GiveFeedbackComponent
     ],
     imports: [
         CommonModule,

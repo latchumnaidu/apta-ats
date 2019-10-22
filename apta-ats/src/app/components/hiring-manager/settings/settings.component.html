@@ -1,0 +1,81 @@
+<div class="conrtainer-fluid p-l-r-0 m-t-dash">
+    <form [formGroup]="adminSettingsForm" (ngSubmit)="onSubmit()">
+        <div class=" p-l-xxl">
+            <p style="font-size: 27px;">Account Settings</p>
+            <p style="font-size: 22px;">Credentials</p>
+            <div class="credentials">
+                <div class="d-flex justify-content-between">
+                    <h2 >Email: <span>abcd@gmail.com</span></h2>
+                    <button class="custom-button" >Change</button>
+                </div>
+                <div class="d-flex justify-content-between">
+                        <h2 >Password: <span>.......</span></h2>
+                        <button class="custom-button" >Change</button>
+                    </div>
+            </div>
+            <p style="font-size: 22px;" class="m-t-sm">Email Notifications</p>
+            <div class="d-flex justify-content-between w-50 m-t-sm">
+                <h6 class="sub-text">Update Notifications</h6>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-secondary active custom-label">
+                      <input type="radio" name="options" id="option1" autocomplete="off" checked> ON
+                    </label>
+                    <label class="btn btn-secondary custom-label">
+                      <input type="radio" name="options" id="option3" autocomplete="off"> OFF
+                    </label>
+                  </div>
+                </div>
+                <div class="d-flex justify-content-between w-50 m-t-sm">
+                    <h6 class="sub-text">AptaHR New Features and Offer Notification </h6>
+                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                        <label class="btn btn-secondary active custom-label">
+                          <input type="radio" name="options" id="option1" autocomplete="off" checked> ON
+                        </label>
+                        <label class="btn btn-secondary custom-label">
+                          <input type="radio" name="options" id="option3" autocomplete="off"> OFF
+                        </label>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between w-50 m-t-sm">
+                        <h6 class="sub-text">Carrier Job Boards Notifications </h6>
+                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                            <label class="btn btn-secondary active custom-label">
+                              <input type="radio" name="options" id="option1" autocomplete="off" checked> ON
+                            </label>
+                            <label class="btn btn-secondary custom-label">
+                              <input type="radio" name="options" id="option3" autocomplete="off"> OFF
+                            </label>
+                          </div>
+                        </div>
+            <p style="font-size: 22px;" class="m-t-sm">Optimize Job Carrier Sites</p>
+            <div class="d-flex justify-content-between w-30 m-t-sm">
+                <h6 class="sub-text">You have Registered 23 Job Boards</h6>
+                 <h6> <span class="jobBoard-btns-edit">Edit</span> <span class="jobBoard-btns">Add</span></h6>
+                </div>
+                <p style="font-size: 22px;" class="m-t-sm">Change Plan Type</p>
+                <h6 class="sub-text">Only Hiring Manager can change the plan type. Mention recruiter details and change plan</h6>
+       <div class="credentials">
+        <div class="d-flex justify-content-between">
+            <h3 class="col-sm-6">Recruiter Name</h3>
+            <input class="form-control" type="text" placeholder="Recruiter_one" readonly>
+            </div>
+            <div class="d-flex justify-content-between m-t-xs">
+                    <h3 class="col-sm-6">Email</h3>
+                    <input class="form-control" type="text" placeholder="recruiter@gmail.com" readonly>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center m-t-xs">
+                            <h3 class="col-sm-6">Choose Plan Structure</h3>
+                            
+                            <mat-radio-group aria-label="Select an option" class="d-flex justify-content-around w-50" [(ngModel)] = "feedbackType">
+                                    <mat-radio-button value="Bug" checked class="d-block">Basic</mat-radio-button>
+                                    <mat-radio-button value="Suggetion" class="d-block">AI</mat-radio-button>
+                                  </mat-radio-group>
+                            </div>
+                           <div class="col-sm-12"> <button class="custom-button m-b m-t-sm" >Update</button></div>
+       </div>
+       <p style="font-size: 22px;">Account Activation: </p>
+       <h6 class="sub-text">Change Plan</h6>
+       <h6 class="sub-text">Delete Account</h6>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,57 @@
+.custom-button {
+    padding: 2px 10px;
+    height: 30px;
+    color: white;
+    background-color: #353E40;
+    border: 1px solid #353E40;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .custom-button:focus {
+      outline: none;
+  }
+  .credentials {
+    background-color:#FFFFFF;
+    width: 430px;
+    padding: 4px 10px;
+    border-radius: 19px;
+    box-shadow: 0px 0px 4px rgba(97, 95, 95, 0.85);
+    h2 {
+       font-size: 25px;
+    }
+    h3 {
+        font-size: 22px;
+    }
+  }
+  .jobBoard-btns {
+    padding: 2px 10px;
+    height: 10px;
+    color: white;
+    background-color: #353E40;
+    border: 1px solid #353E40;
+    border-radius: 15px;
+    cursor: pointer; 
+  }
+  .jobBoard-btns-edit {
+    padding: 2px 10px;
+    margin-right: 10px;
+    height: 10px;
+    color: #353E40;
+    background-color: white;
+    border: 1px solid #353E40;
+    border-radius: 15px;
+    cursor: pointer; 
+  }
+  .w-30 {
+      width: 30%;
+  }
+  * {
+    font-family: century Gothic !important;
+}
+.sub-text{
+    color: #707070;
+}
+.custom-label {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+}

@@ -13,6 +13,7 @@
                 <button class="btn-press nav-button m-r-sm" matBadge="10"
                  matBadgePosition="above after" (click)="inbox()">Inbox</button>
                 <button class="btn-press nav-button">Upload Resumes</button>
+                <button class="btn-press nav-button" (click)="postJobs()"> Post Job</button>
                 <mat-icon (click)="home()">home</mat-icon>
                 <div ngbDropdown class="d-inline-block">
                     <button class="outline-none bg-none b-none text-white" id="dropdownForm1" ngbDropdownToggle>
@@ -34,7 +35,7 @@
                         <p class="text-center text-white m-t-sm pointer"> View More</p>
                     </div>
                 </div>
-                <mat-icon class="m-l-sm pointer" (click)="profile()">account_circle</mat-icon>
+                <!-- <mat-icon class="m-l-sm pointer" (click)="profile()">account_circle</mat-icon> -->
                 <button mat-icon-button [matMenuTriggerFor]="menu" class="outline-none m-r-sm"
                     aria-label="Example icon-button with a menu">
                     <mat-icon>more_vert</mat-icon>
@@ -45,20 +46,20 @@
                             <span>Templates</span>
                         </button> -->
                     <button mat-menu-item class="dot-menu-btn" >
-                        <mat-icon>Need Help</mat-icon>
-                        <span>live_help</span>
+                        <mat-icon>live_help</mat-icon>
+                        <span> Need Help</span>
                     </button>
                     <button mat-menu-item class="dot-menu-btn" >
-                            <mat-icon>Ask Question</mat-icon>
-                            <span>question_answer</span>
+                            <mat-icon>question_answer</mat-icon>
+                            <span>Ask Question </span>
                         </button>
-                        <button mat-menu-item class="dot-menu-btn" >
-                                <mat-icon>FeedBack </mat-icon>
-                                <span>feedback</span>
+                        <button mat-menu-item class="dot-menu-btn" (click)="giveFeedBack()">
+                                <mat-icon>feedback</mat-icon>
+                                <span>FeedBack </span>
                             </button>
                             <button mat-menu-item class="dot-menu-btn" >
-                                    <mat-icon>About Us</mat-icon>
-                                    <span>description</span>
+                                    <mat-icon>description</mat-icon>
+                                    <span>About Us </span>
                                 </button>
                     <button mat-menu-item class="dot-menu-btn">
                         <mat-icon>lock</mat-icon>
@@ -75,13 +76,13 @@
                 </mat-menu>
             </div>
         </div>
-        <button class="feedback-button">FeedBack</button>
+        <!-- <button class="feedback-button">FeedBack</button> -->
         <div class="row w-100 p-l-r justify-content-between align-items-center" [ngClass]="{'nav-opacity': updateProfile}">
             <div class="d-sm-none d-lg-block col-lg-2 p-l-0 text-white admin-text">
                 <div class="admin-text_1">Today Events</div>
-                <div class="admin-text_2">Oct</div>
-                <div class="admin-text_2">17</div>
-                <div class="admin-text_2">2019</div>
+                <!-- <div class="admin-text_2"></div> -->
+                <div class="admin-text_2">17 Oct 2019</div>
+                <!-- <div class="admin-text_2"></div> -->
             </div>
             <div class="col-lg-10 col-sm-12">
                 <div class="d-flex align-items-end scroll-main">
@@ -150,13 +151,13 @@
     <div class="d-flex allPages"  id="wrapper">
         <div id="sidebar-wrapper">
             <div class="manager-side ">
-                <P><span>
+                <P><span (click)="profile()">
                         <mat-icon>person</mat-icon>
                     </span></P>
                 <P><span>Jobs</span></P>
                 <P><img src="../../../assets/submenu1.png"></P>
                 <P><img src="../../../assets/submenu3.png" (click)="contact()"></P>
-                <P><img src="../../../assets/submenu2.png"></P>
+                <P><img src="../../../assets/submenu2.png" (click)="settings()"></P>
               <div class=" ribbons">
                     <p><button (click)="internalSearch()">Internal Search </button> </p>
                     <p><button (click) ="template()">Templates</button> </p>

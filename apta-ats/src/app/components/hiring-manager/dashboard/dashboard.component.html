@@ -7,7 +7,8 @@
 <div [ngClass]="{'d-none': !fromRecruiter}">
         <div class="row  justify-content-between p-l-r-30 m-t-sm">
                 <h4 class="heading m-l m-t-sm">Active Jobs</h4>
-                <button class="custom-button d-flex justify-content-between align-items-center">
+                <button class="custom-button d-flex justify-content-between
+                 align-items-center" (click)="manageRecruiters()">
                     <mat-icon>add</mat-icon> &nbsp;&nbsp;
                     Manage Recruiters
                 </button>

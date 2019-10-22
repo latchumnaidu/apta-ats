@@ -1,0 +1,273 @@
+<div class="container-fluid m-t">
+    <div class="d-flex justify-content-between">
+        <h4><u>Post Your Job</u></h4>
+        <h4><button matBadge="8" matBadgePosition="after" class="draft">Draft</button></h4>
+    </div>
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="postJob">
+            <form [formGroup]="postJob">
+                <ng-template matStepLabel>Post Your Job</ng-template>
+                <div class="d-flex justify-content-between w-50 m-t">
+                    <div>
+                        <h6>Job Title</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Job Title</mat-label>
+                            <input matInput placeholder="Job title" formControlName="title">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h6>Client</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Client</mat-label>
+                            <input matInput placeholder="Client" formControlName="client">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-50">
+                    <div>
+                        <h6>Job Location</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Job Location</mat-label>
+                            <input matInput placeholder="Job Location" formControlName="location">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <h6>Area Code</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Area Code</mat-label>
+                            <input matInput placeholder="Area Code" formControlName="code">
+                            <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+                        </mat-form-field>
+                    </div>
+                </div>
+                <h6>Eligibility </h6>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Fresher</mat-checkbox>
+                    <mat-checkbox class="example-margin">Internship</mat-checkbox>
+                    <mat-checkbox class="example-margin">Experience</mat-checkbox>
+                    <mat-checkbox class="example-margin">Any</mat-checkbox>
+                </section>
+                <h6>Job Type </h6>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Part Time</mat-checkbox>
+                    <mat-checkbox class="example-margin">Full Time</mat-checkbox>
+                    <mat-checkbox class="example-margin">Contract</mat-checkbox>
+                    <mat-checkbox class="example-margin">Any</mat-checkbox>
+                </section>
+                <h6>Job Validation</h6>
+                <div class="d-flex w-50 justify-content-between">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Start Date</mat-label>
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>End Date</mat-label>
+                        <input matInput [matDatepicker]="picker1" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <div class="col-sm-4 p-l-0">
+                        <h6>Required C2C</h6>
+                        <div class="d-flex justify-content-between  c2c">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Min</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Max</mat-label>
+                                <input matInput>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Hrs / Mins</mat-label>
+                                <input matInput placeholder="Hrs/Mins">
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-sm-7">
+                        <h6>Highest Qualification</h6>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Highest Qualification</mat-label>
+                            <mat-select>
+                                <mat-option value="option">BSc</mat-option>
+                                <mat-option value="option1">BE</mat-option>
+                                <mat-option value="option1">MSc</mat-option>
+                                <mat-option value="option1">MCA</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <h6>Skills Required</h6>
+                <div class="jobs-box">
+                    <mat-form-field class="w-100">
+                        <mat-chip-list #chipList aria-label="skills selection">
+                            <mat-chip *ngFor="let skill of skills" [selectable]="selectable" [removable]="removable"
+                                (removed)="remove(skill)">
+                                {{skill.name}}
+                                <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                            </mat-chip>
+                            <input placeholder="Enter Skills" [matChipInputFor]="chipList"
+                                [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                                (matChipInputTokenEnd)="add($event)">
+                        </mat-chip-list>
+                    </mat-form-field>
+                </div>
+                <h6>Job Description</h6>
+                <div class="d-flex justify-content-between w-75">
+                    <div class="jobs-box">
+                        <mat-form-field class="w-100">
+                            <textarea matInput placeholder="Any Perks about your Company" rows="4" cols="40"></textarea>
+                        </mat-form-field>
+                        <p>
+                            <button class="skills-btn">Import From Templates</button>
+                        </p>
+                        <h6>
+                            <mat-checkbox><span class="f-s-14">Repeat this Template for every Job Post</span>
+                            </mat-checkbox>
+                        </h6>
+                    </div>
+                    <div class="jobtemplate">
+                        <h6 class="m-b">Job Description Template</h6>
+                        <mat-checkbox *ngFor="let item of templates" [value]="item" class="d-block">
+                            {{item}}
+                        </mat-checkbox>
+                    </div>
+                </div>
+                <h6>Application Link</h6>
+                <div class="jobs-box">
+                    <p>As soon Recruiter mentioned above details, there will
+                        be a link displayed In this box </p>
+                    <button class="skills-btn">Copy Link</button>
+                </div>
+                <div>
+                    <button mat-button matStepperNext class="custom-button m-r">Save And Continue</button>
+                    <button mat-button class="skills-btn border-radius">Save AS Draft</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <form>
+                <ng-template matStepLabel>Application Changes</ng-template>
+                <div class="applicationChanges">
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <h6>Job Title: <span>Java developer</span></h6>
+                            <h6>Client: <span>JB Morgan</span></h6>
+                            <div class="d-flex">
+                                <h6>Job Location: <span>Dallas, Texas</span></h6>
+                                <h6 class="m-l-sm">Area Code: <span>102341</span></h6>
+                            </div>
+                            <h6>Eligibility</h6>
+                            <h6><span>&#9679; &nbsp; Fresher</span> <span>&#9679; &nbsp; Internship</span></h6>
+                            <h6>Job Type</h6>
+                            <h6><span>&#9679; &nbsp; Part Time</span> <span>&#9679; &nbsp; Full Time</span></h6>
+                            <h6>Job Validation</h6>
+                            <h6 class="d-flex justify-content-between w-50">
+                                <button class="skills-btn">20 AUG 2019</button>
+                                <span>TO</span>
+                                <button class="skills-btn">30 AUG 2019</button>
+                            </h6>
+                            <h6>Required C2C: <span>70-95$ / hr</span></h6>
+                            <h6>Skills Required:</h6>
+                            <h6><span>&#9679; &nbsp; Python</span> <span>&#9679; &nbsp; Java</span> <span>&#9679; &nbsp;
+                                    UI</span></h6>
+                            <h6>Certifications</h6>
+                            <h6><span>&#9679; &nbsp; Java Certification with Latest Version</span></h6>
+                            <h6>Higher Education: <span> Bachelors or Related field</span></h6>
+                            <h5>Job Description</h5>
+                            <h6><span>&#9679; &nbsp; Strong experience in Java & Spring Boot</span></h6>
+                            <h6><span>&#9679; &nbsp; Preferred back-end development experience with Java, Spring MVC,
+                                    Hibernate, MySQL, RESTful and SOAP APIs</span></h6>
+                            <h6><span>&#9679; &nbsp; An understanding of web application programming and how web apps
+                                    work
+
+                                </span></h6>
+                            <h6><span>&#9679; &nbsp; Passionate, adaptable, flexible, independent and self-motivated
+                                    individuals
+                                    who take initiative & ownership of projects are desired</span></h6>
+                            <h5>Required Candidate profile</h5>
+                            <h6>Skills: <span>Java, Hibernate (Java), MySQL, Spring MVC, RESTful APIs and SOAP</span>
+                            </h6>
+                            <h6>Experience</h6>
+                            <h6><span>&#9679; &nbsp; Experience in implementing projects using open source technologies
+                                    Java 6/7/8, Spring, Spring MVC
+                                </span></h6>
+                            <h6><span>&#9679; &nbsp; Experience using the latest versions of HTML, JSP, AJAX, Servlets,
+                                    CSS, JavaScript, XML (DOM, SAX),
+
+                                    Web Services (RESTful or SOAP) and JMS
+                                </span></h6>
+                            <h6><span>&#9679; &nbsp; Experience in SQL & PLSQL programming in SQL Server. </span></h6>
+                            <h6><span>&#9679; &nbsp; Experience in Apache Tomcat (production server experience
+                                    preferred). </span></h6>
+                                    <div class="d-flex">
+                                        <div class="jobs-box">
+                                            <h6> Perks about your Company:</h6>
+                                            <p>The ARMATURY Group brand at Dolni Benesov. We have just extended the long
+                                                    tradition and history of production of industrial valves in the Opava and Hlučín
+                                                    Region beginning in the middle of the last century.</p>
+                                        </div>
+                                        <div class="d-flex align-items-center justify-content-center col-sm-4">
+                                                <mat-checkbox class="d-block jobtemplate">
+                                                        Hide Company Perks
+                                                </mat-checkbox>
+                                            </div>
+                                    </div>
+                            <h6>Application Link</h6>
+                            <div class="jobs-box">
+                                <p>As soon Recruiter mentioned above details, there will
+                                    be a link displayed In this box </p>
+                                <button class="skills-btn">Copy Link</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 ">
+                            <div class="jobtemplate">
+                                <mat-checkbox *ngFor="let item of applicationDetails" [value]="item" class="d-block">
+                                        {{item}}
+                                    </mat-checkbox>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button mat-button matStepperNext class="custom-button m-r">Save And Continue</button>
+                    <button mat-button class="skills-btn border-radius">Save AS Draft</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Assesment</ng-template>
+            <h6>Please Specify interview Allotment Process for Candidates</h6>
+            <div>
+                    <div class="step completed" *ngFor="let item of allotment">
+                            <div class="v-stepper">
+                              <div class="circle d-flex justify-content-center align-items-center">{{item.sr_no}}</div>
+                              <div class="line"></div>
+                            </div>
+                      
+                            <div class="content">
+                              <div class="jobs-box rounded">{{item.content}}</div>
+                            </div>
+                        </div>
+            </div>
+            <div>
+                <button mat-button matStepperPrevious class="custom-button m-r">Back</button>
+                <button mat-button matStepperNext class="custom-button">Next</button>
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Publish</ng-template>
+            You are now done.
+            <div>
+                <button mat-button matStepperPrevious class="custom-button">Back</button>
+                <button mat-button (click)="stepper.reset()" class="custom-button">Reset</button>
+            </div>
+        </mat-step>
+    </mat-horizontal-stepper>
+</div>

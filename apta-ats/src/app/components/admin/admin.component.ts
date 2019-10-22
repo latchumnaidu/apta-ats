@@ -50,6 +50,9 @@ export class AdminComponent implements OnInit, OnDestroy {
   feedBack() {
     this.router.navigate(['./admin/feedback']);
   }
+  giveFeedBack() {
+    this.router.navigate(['./admin/give-feedback']);
+  }
   profile() {
     this.router.navigate(['./admin/profile']);
   }

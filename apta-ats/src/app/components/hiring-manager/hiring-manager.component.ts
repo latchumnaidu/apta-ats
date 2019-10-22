@@ -29,6 +29,15 @@ subscription: Subscription;
   contact() {
     this.router.navigate(['./hiring-manager/contact']);
   }
+  settings() {
+    this.router.navigate(['./hiring-manager/settings']);
+  }
+  profile() {
+    this.router.navigate(['./hiring-manager/profile']);
+  }
+  postJobs() {
+    this.router.navigate(['./hiring-manager/jobs']);
+  }
   inbox() {
     this.router.navigate(['./hiring-manager/inbox']);
   }
@@ -37,6 +46,9 @@ subscription: Subscription;
   }
   template() {
     this.router.navigate(['./hiring-manager/template']);
+  }
+  giveFeedBack() {
+    this.router.navigate(['./hiring-manager/give-feedback']);
   }
   signOut() {
     this.router.navigate(['./login']);

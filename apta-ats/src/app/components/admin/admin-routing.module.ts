@@ -1,3 +1,4 @@
+import { GiveFeedbackComponent } from './give-feedback/give-feedback.component';
 import { AdminVisitorsComponent } from './admin-visitors/admin-visitors.component';
 import { AdminSubscriptionComponent } from './admin-subscription/admin-subscription.component';
 import { AdminProfileComponent } from './admin-profile/admin-profile.component';
@@ -28,6 +29,7 @@ const routes: Routes = [
             {path: 'profile', component:  AdminProfileComponent},
             {path: 'subscription', component:  AdminSubscriptionComponent},
             {path: 'visitors', component:  AdminVisitorsComponent},
+            {path: 'give-feedback', component: GiveFeedbackComponent},
         ]
     }
 

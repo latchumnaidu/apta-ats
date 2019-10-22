@@ -43,6 +43,10 @@
                         <mat-icon>settings</mat-icon>
                         <span>Settings</span>
                     </button>
+                    <button mat-menu-item class="dot-menu-btn" (click)="giveFeedBack()">
+                        <mat-icon>feedback</mat-icon>
+                        <span>FeedBack </span>
+                    </button>
                     <button mat-menu-item class="dot-menu-btn">
                         <mat-icon>lock</mat-icon>
                         <span>Privacy Policy</span>
@@ -58,7 +62,7 @@
                 </mat-menu>
             </div>
         </div>
-            <button class="feedback-button">FeedBack</button>
+            <!-- <button class="feedback-button" (click)="giveFeedBack()">FeedBack</button> -->
         <div class="d-flex w-100 justify-content-between align-items-center p-l-r-10 m-t m-b-xs">
             <div class="col-sm-2 text-white admin-text">
                 <div class="admin-text_1">Naveen Reddy Sagha</div>

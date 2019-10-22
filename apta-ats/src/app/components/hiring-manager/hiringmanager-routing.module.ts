@@ -1,3 +1,7 @@
+import { JobsComponent } from './jobs/jobs.component';
+import { ProfileComponent } from './profile/profile.component';
+import { SettingsComponent } from './settings/settings.component';
+import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { InternalSearchComponent } from './internal-search/internal-search.component';
 import { TemplateComponent } from './template/template.component';
 import { InboxComponent } from './inbox/inbox.component';
@@ -17,7 +21,11 @@ const routes: Routes  = [
         {path: '', redirectTo : 'update-profile', pathMatch: 'full' },
         {path: 'dashboard', component: DashboardComponent},
         {path: 'contact', component: ContactUsComponent},
+        {path: 'settings', component: SettingsComponent },
+        {path: 'profile', component: ProfileComponent },
+        {path: 'jobs', component: JobsComponent },
         {path: 'inbox', component: InboxComponent},
+        {path: 'give-feedback', component: FeedbackPageComponent},
         {path: 'internalSearch', component: InternalSearchComponent},
         {path: 'template', component: TemplateComponent},
         {path: 'recruiters', component: RecruitersComponent,
