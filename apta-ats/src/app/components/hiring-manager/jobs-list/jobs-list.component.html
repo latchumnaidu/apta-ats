@@ -1,0 +1,300 @@
+<div class="m-t-lg p-l-r">
+    <div class="d-flex p-l-r-10 justify-content-between align-items-center">
+        <mat-form-field class="w-75">
+            <mat-chip-list #chipList aria-label="skills selection">
+                <mat-chip *ngFor="let skill of skills" [selectable]="selectable" [removable]="removable"
+                    (removed)="remove(skill)">
+                    {{skill.name}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                </mat-chip>
+                <input placeholder="Enter Skills" [matChipInputFor]="chipList"
+                    [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                    (matChipInputTokenEnd)="add($event)">
+            </mat-chip-list>
+        </mat-form-field>
+        <!-- <div>
+                    <button class="skills-btn d-flex rounded">
+                            <mat-icon>filter_list</mat-icon>
+                            <span>Filter By</span>
+                        </button>
+              </div> -->
+        <div ngbDropdown class="d-inline-block">
+            <button class="skills-btn d-flex rounded" id="dropdownForm1" ngbDropdownToggle>
+                <mat-icon>filter_list</mat-icon>
+                <span>Filter By</span>
+            </button>
+            <div ngbDropdownMenu aria-labelledby="dropdownForm1">
+                <div class="text-center">Role</div>
+                <div class="dropdown-divider"></div>
+                <div class="text-center">Client </div>
+                <div class="dropdown-divider"></div>
+                <div class="text-center">Calender</div>
+                <div class="dropdown-divider"></div>
+                <div class="text-center">
+                    <button class="skills-btn">Add Filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-between" *ngIf="!updateJob">
+        <div class="col-md-3">
+            <div class="d-flex">
+                <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="2"></mat-radio-button>
+                </mat-radio-group>
+                <div class="jobs-box">
+                    <h6 class="text-center">Java Developer</h6>
+                    <div class="d-flex justify-content-between m-t m-b-sm">
+                        <div>
+                            <div class="button b2" id="button-10">
+                                <input type="checkbox" class="checkbox">
+                                <div class="knobs">
+                                    <span>Active</span>
+                                </div>
+                                <div class="layer"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="edit-btn" (click)="updateJob = true">Edit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 border-left">
+            <div class="applicationChanges">
+                <div class="d-flex justify-content-between">
+                    <div *ngIf="!reviews">
+                        <div class="d-flex">
+                            <h6>Job Title: <span>Java developer</span></h6>
+                            <h6 class="m-l-sm">Posted : <span>22 AUG 04:00 PM</span></h6>
+                        </div>
+                        <h6>Job Title: <span>Java developer</span></h6>
+                        <h6>Client: <span>JB Morgan</span></h6>
+                        <div class="d-flex">
+                            <h6>Job Location: <span>Dallas, Texas</span></h6>
+                            <h6 class="m-l-sm">Area Code: <span>102341</span></h6>
+                        </div>
+                        <h6>Experience <span> &nbsp; Fresher</span> <span> &nbsp; Internship</span></h6>
+                        <h6>Job Type <span>&nbsp; Part Time</span></h6>
+                        <h6>No.Of Vacancies <span>&nbsp; 10</span></h6>
+                        <h6>Job Validation <span class="skills-btn p-0">20 AUG 2019</span>
+                            <span>TO</span>
+                            <span class="skills-btn p-0">30 AUG 2019</span></h6>
+                        <h6> C2C: <span>70-95$ / hr</span> or <span>$170k / Annum</span></h6>
+                        <h6>Highest Qualification: <span> Bachelors or Related field</span></h6>
+                    </div>
+                    <div *ngIf="reviews">
+                        <div class=" jobs-box rounded w-90" *ngFor="let item of notifications">
+                            <h6 class="d-flex justify-content-between">
+                                <a>{{item}}</a>
+                                <div><button class="custom-button f-s-16">Reply</button></div>
+                            </h6>
+                            <h6 class=" f-s-14">
+                                Many candidates we came across are looking for remote position for present C2C
+                                rate. There are 3 Profiles which suits our requirement but are looking around $140.
+                            </h6>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="jobs-box width-280">
+                            <div class="d-flex">
+                                <div>
+                                    <h6 class="text-center">Applications Recieved</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <mat-chip-list aria-label="Fish selection">
+                                            <mat-chip class="rounded-circle">1</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h6 class="text-center">Candidates Hired</h6>
+                                    <div class="d-flex justify-content-center">
+                                        <mat-chip-list aria-label="Fish selection">
+                                            <mat-chip class="rounded-circle">1</mat-chip>
+                                        </mat-chip-list>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jobs-box width-280 m-t">
+                            <div>
+                                <h6 class="m-b-sm">Assigned To: <span>***</span></h6>
+                                <h6 class="m-b-sm">Team Lead: <span>Mohammad</span></h6>
+                                <h6 class="m-b-sm">Hiring Manager: <span>Naveen Sagha</span></h6>
+                                <div class="d-flex justify-content-between">
+                                    <h6><button class="custom-button" (click)="reviews = !reviews">Reviews - 5</button>
+                                    </h6>
+
+                                    <h6><button class="custom-button">Published</button></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="!reviews">
+                    <h5>Job Description</h5>
+                    <h6><span>&#9679; &nbsp; Strong experience in Java & Spring Boot</span></h6>
+                    <h6><span>&#9679; &nbsp; Preferred back-end development experience with Java, Spring MVC,
+                            Hibernate, MySQL, RESTful and SOAP APIs</span></h6>
+                    <h6><span>&#9679; &nbsp; An understanding of web application programming and how web apps
+                            work
+
+                        </span></h6>
+                    <h6><span>&#9679; &nbsp; Passionate, adaptable, flexible, independent and self-motivated
+                            individuals
+                            who take initiative & ownership of projects are desired</span></h6>
+                    <h5>Required Candidate profile</h5>
+                    <h6>Skills: <span>Java, Hibernate (Java), MySQL, Spring MVC, RESTful APIs and SOAP</span>
+                    </h6>
+                    <h6>Experience</h6>
+                    <h6><span>&#9679; &nbsp; Experience in implementing projects using open source technologies
+                            Java 6/7/8, Spring, Spring MVC
+                        </span></h6>
+                    <h6><span>&#9679; &nbsp; Experience using the latest versions of HTML, JSP, AJAX, Servlets,
+                            CSS, JavaScript, XML (DOM, SAX),
+
+                            Web Services (RESTful or SOAP) and JMS
+                        </span></h6>
+                    <h6><span>&#9679; &nbsp; Experience in SQL & PLSQL programming in SQL Server. </span></h6>
+                    <h6><span>&#9679; &nbsp; Experience in Apache Tomcat (production server experience
+                            preferred). </span></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="updateJob">
+        <form [formGroup]="postJob">
+            <div class="d-flex justify-content-between w-50 m-t">
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" class="form-control" formControlName="title" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>Client</label>
+                    <input type="text" class="form-control" formControlName="client" placeholder="">
+                </div>
+            </div>
+            <div class="d-flex justify-content-between w-50">
+                <div class="form-group">
+                    <label>Job Location</label>
+                    <input type="text" class="form-control" formControlName="location" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>Area Code</label>
+                    <input type="text" class="form-control" formControlName="code" placeholder="">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="d-block">Eligibility</label>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Fresher</mat-checkbox>
+                    <mat-checkbox class="example-margin">Internship</mat-checkbox>
+                    <mat-checkbox class="example-margin">Experience</mat-checkbox>
+                    <mat-checkbox class="example-margin">Any</mat-checkbox>
+                </section>
+            </div>
+
+            <div class="form-group">
+                <label class="d-block">Job Type</label>
+                <section class="example-section">
+                    <mat-checkbox class="example-margin">Part Time</mat-checkbox>
+                    <mat-checkbox class="example-margin" checked>Full Time</mat-checkbox>
+                    <mat-checkbox class="example-margin">Contract</mat-checkbox>
+                    <mat-checkbox class="example-margin">Any</mat-checkbox>
+                </section>
+            </div>
+            <h6>Job Validation</h6>
+            <div class="d-flex w-50 justify-content-between">
+
+                <div class="form-group">
+                    <label>Start Date</label>
+                    <input type="date" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label>End Date</label>
+                    <input type="date" class="form-control" placeholder="">
+                </div>
+
+            </div>
+            <div class="d-flex justify-content-between w-50 ">
+                <div class="col-md-8 col-sm-12 p-l-0">
+                    <h6>Required C2C</h6>
+                    <div class="d-flex justify-content-between  c2c">
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Min">
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Max">
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Hrs / Mins">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Highest Qualification</label>
+                        <select class="form-control" id="exampleFormControlSelect1" formControlName="qualification">
+                            <option value="option">BSc</option>
+                            <option value="option1">BE</option>
+                            <option value="option1">MSc</option>
+                            <option value="option1">MCA</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <h6>Skills Required</h6>
+            <div class="jobs-box">
+                <mat-form-field class="w-100">
+                    <mat-chip-list #chipList aria-label="skills selection">
+                        <mat-chip *ngFor="let skill of skills" [selectable]="selectable" [removable]="removable"
+                            (removed)="remove(skill)">
+                            {{skill.name}}
+                            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                        </mat-chip>
+                        <input placeholder="Enter Skills" [matChipInputFor]="chipList"
+                            [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                            (matChipInputTokenEnd)="add($event)">
+                    </mat-chip-list>
+                </mat-form-field>
+            </div>
+            <h6>Job Description</h6>
+            <div class="d-flex justify-content-between w-75">
+                <div class="jobs-box">
+                    <mat-form-field class="w-100">
+                        <textarea matInput placeholder="Any Perks about your Company" rows="4" cols="40"></textarea>
+                    </mat-form-field>
+                    <p>
+                        <button class="skills-btn">Import From Templates</button>
+                    </p>
+                    <h6>
+                        <mat-checkbox><span class="f-s-14">Repeat this Template for every Job Post</span>
+                        </mat-checkbox>
+                    </h6>
+                </div>
+                <div class="jobtemplate">
+                    <h6 class="m-b">Job Description Template</h6>
+                    <mat-checkbox *ngFor="let item of templates" [value]="item" class="d-block">
+                        {{item}}
+                    </mat-checkbox>
+                </div>
+            </div>
+            <h6>Application Link</h6>
+            <div class="jobs-box">
+                <p>As soon Recruiter mentioned above details, there will
+                    be a link displayed In this box </p>
+                <button class="skills-btn">Copy Link</button>
+            </div>
+            <p class="m-t">
+                <button class="custom-button" (click)="updateJob = false">Update</button>
+            </p>
+        </form>
+    </div>
+</div>

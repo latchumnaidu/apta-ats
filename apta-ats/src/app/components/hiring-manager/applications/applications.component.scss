@@ -1,0 +1,25 @@
+@import '../internal-search/internal-search.component.scss';
+.search-input {
+    border: 0;
+    border-bottom: 2px solid #707070;
+}
+.search-input:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+.mail-box {
+    height: auto;
+    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.mat-stepper-horizontal {
+    background-color: transparent !important;
+}
+::ng-deep.mat-horizontal-stepper-header-container {
+  background-color: cadetblue !important;
+  border-radius: 40px;
+}
+.custom-width {
+    min-width: 500px;
+}

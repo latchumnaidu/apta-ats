@@ -20,6 +20,8 @@ import { FeedbackPageComponent } from './feedback-page/feedback-page.component';
 import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './profile/profile.component';
 import { JobsComponent } from './jobs/jobs.component';
+import { JobsListComponent } from './jobs-list/jobs-list.component';
+import { ApplicationsComponent } from './applications/applications.component';
 @NgModule({
     declarations: [
         HiringManagerComponent,
@@ -35,7 +37,9 @@ import { JobsComponent } from './jobs/jobs.component';
         FeedbackPageComponent,
         SettingsComponent,
         ProfileComponent,
-        JobsComponent
+        JobsComponent,
+        JobsListComponent,
+        ApplicationsComponent
     ],
     imports: [
         CommonModule,

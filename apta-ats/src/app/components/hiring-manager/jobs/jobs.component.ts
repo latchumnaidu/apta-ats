@@ -2,8 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
 import {MatChipInputEvent} from '@angular/material/chips';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export interface Skills {
   name: string;
+}
+export interface AllotmentType {
+  sr_no: number;
+  content: string;
 }
 @Component({
   selector: 'app-jobs',
@@ -15,6 +20,7 @@ export class JobsComponent implements OnInit {
   selectable = true;
   removable = true;
   addOnBlur = true;
+  addnewAllotment = '';
   readonly separatorKeysCodes: number[] = [ENTER, COMMA];
   skills: Skills[] = [
     {name: 'Python'},
@@ -24,7 +30,11 @@ export class JobsComponent implements OnInit {
   postJob: FormGroup;
   secondFormGroup: FormGroup;
   templates = ['Perk Template', 'Job Introduction', 'Make Mandatory', 'Make Mandatory', 'Make Mandatory'];
-  constructor(private fb: FormBuilder) {}
+  mcqTest: boolean;
+  constructor(
+    private fb: FormBuilder,
+    private modalService: NgbModal,
+    ) {}
   applicationDetails = [
     'Allow applicants to visible Client details',
     'Hide C2C Required from applicants',
@@ -35,12 +45,20 @@ export class JobsComponent implements OnInit {
     'Make Resume Mandatory',
     'Certificate Mandatory',
   ];
-  allotment = [
-    {sr_no: '1', content: 'MCQ Test'},
-    {sr_no: '2', content: 'Phone Interview'},
-    {sr_no: '3', content: 'Technical Round'},
-    {sr_no: '4', content: 'HR Round'},
-    {sr_no: '5', content: 'Optional'},
+  allotment: AllotmentType[] = [
+    {sr_no: 1, content: 'MCQ Test'},
+    {sr_no: 2, content: 'Phone Interview'},
+    {sr_no: 3, content: 'Technical Round'},
+    {sr_no: 4, content: 'HR Round'},
+  ];
+  jobsites = [
+    '../../../../assets/jobSites/1.png',
+    '../../../../assets/jobSites/2.png',
+    '../../../../assets/jobSites/3.png',
+    '../../../../assets/jobSites/4.png',
+    '../../../../assets/jobSites/5.png',
+    '../../../../assets/jobSites/6.png',
+    '../../../../assets/jobSites/7.png',
   ];
   ngOnInit() {
 
@@ -61,6 +79,25 @@ export class JobsComponent implements OnInit {
       secondCtrl: ['', Validators.required]
     });
   }
+  openMcqTest(data) {
+    if (data.content === 'MCQ Test') {
+      this.mcqTest = true;
+    } else {
+      this.mcqTest = false;
+    }
+  }
+  addNewInterview() {
+   const length = this.allotment.length;
+   this.allotment.push({sr_no: length + 1, content: this.addnewAllotment});
+   this.addnewAllotment = '';
+  }
+  openVerticallyCentered(content) {
+    this.modalService.open(content, { centered: true });
+  }
+  openSeccessMessage(success) {
+    this.modalService.open(success, { centered: true });
+  }
+  // for skills adding and removing methods start here
   add(event: MatChipInputEvent): void {
     const input = event.input;
     const value = event.value;
@@ -83,4 +120,5 @@ export class JobsComponent implements OnInit {
       this.skills.splice(index, 1);
     }
   }
+  // end
 }

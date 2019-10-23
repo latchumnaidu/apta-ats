@@ -1,3 +1,5 @@
+import { ApplicationsComponent } from './applications/applications.component';
+import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
@@ -23,7 +25,9 @@ const routes: Routes  = [
         {path: 'contact', component: ContactUsComponent},
         {path: 'settings', component: SettingsComponent },
         {path: 'profile', component: ProfileComponent },
-        {path: 'jobs', component: JobsComponent },
+        {path: 'post-jobs', component: JobsComponent },
+        {path: 'jobs', component: JobsListComponent },
+        {path: 'applications', component: ApplicationsComponent },
         {path: 'inbox', component: InboxComponent},
         {path: 'give-feedback', component: FeedbackPageComponent},
         {path: 'internalSearch', component: InternalSearchComponent},

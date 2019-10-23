@@ -1,0 +1,185 @@
+<div class="container-fluid m-t-lg">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+            <mat-step >
+              <form >
+                <ng-template matStepLabel>Applications</ng-template>
+                <div>
+                        <div class=" m-t  row align-items-center justify-content-between ">
+                                <div class="col-md-7">
+                                  <!-- <mat-form-field class="w-100">
+                                    <input matInput  placeholder="Search Applications">
+                                  </mat-form-field> -->
+                                  <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                          <!-- <span class="input-group-text" id="basic-addon1">@</span> -->
+                                          <mat-icon>search</mat-icon>
+                                        </div>
+                                        <input type="text" class="form-control search-input outline-none" placeholder="Search Applications" >
+                                      </div>
+                                </div>
+                                <div>
+                                    <button class="compose">Organize Applications Module</button>
+                                </div>
+                              </div>
+                              <div class="offset-sm-2 col-sm-10  m-b m-w-940  row align-items-center">
+                                    <div class="d-flex">
+                                        <button class="filter d-flex" (click)="openVerticallyCentered(content)">
+                                                <span class="m-r-sm">Email</span>
+                                                <mat-icon> email</mat-icon>
+                                        </button>
+                                        <button class="filter">
+                                                <span>Compare</span>
+                                        </button>
+                                        <button class="filter d-flex">
+                                                <span class="m-r-sm">Resume</span>
+                                                <mat-icon>cloud_upload</mat-icon>
+                                        </button>
+                                    </div>
+                                  </div>
+                                  <ng-template #content let-modal>
+                                        <div class="modal-body">
+                                          <div class="custom-width">
+                                                <div class="input-group border rounded align-items-center p-xs">
+                                                        <div class="input-group-prepend">
+                                                                <span >TO:</span>
+                                                              </div>
+                                                        <input type="text" class="form-control border-0 search-input" id="exampleInputEmail1" >
+                                                        <div class="input-group-append">
+                                                                <span >CC | BCC</span>
+                                                              </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between">
+                                                    <div class="input-group border rounded align-items-center p-xs">
+                                                            <div class="input-group-prepend">
+                                                                    <span >Subject:</span>
+                                                                  </div>
+                                                            <input type="text" class="form-control border-0 search-input" id="exampleInputEmail1" >
+                                                    </div>
+                                                    <div class="mails rounded p-0 m-0 d-flex align-items-center justify-content-between">
+                                                            <img src="../../../../assets/mail-shortcuts/1.png" >
+                                                            <img src="../../../../assets/mail-shortcuts/2.png" >
+                                                            <img src="../../../../assets/mail-shortcuts/3.png" >
+                                                            <img src="../../../../assets/mail-shortcuts/4.png" >
+                                                    </div>
+                                                </div>
+                                          </div>
+                                        </div>
+                                            </ng-template>
+                              <div class="row  m-b-xl">
+                                  <div class="col-sm-2 border-right mail-sidebar">
+                                        <!-- <button class="d-flex justify-content-around compose">
+                                                <mat-icon>add</mat-icon>
+                                                <span>Compose</span>
+                                        </button> -->
+                                        <div class="sub-heads   d-flex"><mat-icon class="m-r-sm">filter_list</mat-icon> <span>FilterBy</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Roles</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Clients</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Submitted</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Rejected</span>  </div>
+                                        <div class="mail-heading  d-flex m-b"><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Date</span>  </div>
+                                        <div class="sub-heads  d-flex"> <span>Created By You</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>JB Morgan</span>  </div>
+                                        <div class="mail-heading  d-flex "><mat-icon class="m-r-sm">add_circle_outline</mat-icon> <span>Prabhakar</span>  </div>
+                        
+                                      
+                                  </div>
+                                  <div class="col-sm-10 mail-box border-right">
+                                        <div class=" d-flex justify-content-between" >
+                                                <div class="col-sm-2 d-flex justify-content-between align-items-center">
+                                                     <span class="mail-heading ">Job ID</span>
+                                                </div>
+                                              <div class="col-sm-10 d-flex align-items-center justify-content-between">
+                                                    <span class="mail-heading ">Name & Role</span>
+                                                    <span class="mail-heading ">Received At</span>
+                                                    <span class="mail-heading ">Application Status</span>
+                                                    <span class="mail-heading ">Score</span>
+                                                    <span class="mail-heading  text-white">view Resume</span>
+                                                    <span class="mail-heading  text-white"> submit</span>
+                                                    <span class="mail-heading  text-white"> comment</span>
+                                                  </div>
+                                        </div>
+                                      <div class="mails d-flex justify-content-between" *ngFor="let item of names">
+                                            <div class="col-sm-2 d-flex justify-content-between align-items-center">
+                                                    <mat-checkbox></mat-checkbox>
+                                                    <span>01732</span>
+                                                    <img src="../../../../assets/man.png" style="    height: 40px;">
+                                            </div>
+                                          <div class="col-sm-10 d-flex align-items-center justify-content-between">
+                                              <div class=" mail-heading">
+                                                  <span class=" d-block">{{item}}</span>
+                                                  <span class="d-block">Java Developer</span>
+                                              </div>
+                                              <div class=" mail-heading">
+                                                  <span class="d-block d-flex "><mat-icon>access_time</mat-icon> 12:00 PM</span>
+                                                  <span class="d-block ">24 SEP 2019</span>
+                                              </div>
+                                              <div>
+                                                    <div class="filter rejected">
+                                                            <span class="d-block">Rejected In</span>
+                                                            <span class="d-block">Phone Interview</span>
+                                                        </div>
+                                              </div>
+                                              <div class="text-center">
+                                                  <button class="filter rounded-circle d-inline-block percentage">
+                                                      81%
+                                                  </button>
+                                                  <span class="d-block text-center">Report</span>
+                                              </div>
+                                              <div>
+                                                    <button class="compose">View Resume</button>
+                                              </div>
+                                              <div>
+                                                    <button class="compose"> Submit</button>
+                                              </div>
+                                              <div>
+                                                    <button class="filter rounded-circle d-inline-block percentage">
+                                                            <mat-icon class="m-t-xs">question_answer</mat-icon>
+                                                        </button>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                    
+                          </div>
+              
+              </form>
+            </mat-step>
+            <mat-step >
+              <form >
+                <ng-template matStepLabel>Reports</ng-template>
+                <mat-form-field>
+                  <input matInput placeholder="Address"  >
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Back</button>
+                  <button mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+            </mat-step>
+            <mat-step>
+              <ng-template matStepLabel>Hired</ng-template>
+              You are now done.
+              <div>
+                <button mat-button matStepperPrevious>Back</button>
+                <button mat-button (click)="stepper.reset()">Reset</button>
+              </div>
+            </mat-step>
+            <mat-step>
+                    <ng-template matStepLabel>Refered</ng-template>
+                    You are now done.
+                    <div>
+                      <button mat-button matStepperPrevious>Back</button>
+                      <button mat-button (click)="stepper.reset()">Reset</button>
+                    </div>
+                  </mat-step>
+                  <mat-step>
+                        <ng-template matStepLabel>Internal</ng-template>
+                        You are now done.
+                        <div>
+                          <button mat-button matStepperPrevious>Back</button>
+                          <button mat-button (click)="stepper.reset()">Reset</button>
+                        </div>
+                      </mat-step>
+          </mat-horizontal-stepper>
+        </div>

@@ -36,7 +36,13 @@ subscription: Subscription;
     this.router.navigate(['./hiring-manager/profile']);
   }
   postJobs() {
+    this.router.navigate(['./hiring-manager/post-jobs']);
+  }
+  Jobs() {
     this.router.navigate(['./hiring-manager/jobs']);
+  }
+  applications() {
+    this.router.navigate(['./hiring-manager/applications']);
   }
   inbox() {
     this.router.navigate(['./hiring-manager/inbox']);
