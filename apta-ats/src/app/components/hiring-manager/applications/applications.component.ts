@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
+// import * as $AB from 'jquery';
 @Component({
   selector: 'app-applications',
   templateUrl: './applications.component.html',
@@ -8,6 +8,9 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ApplicationsComponent implements OnInit {
   names = ['Name_1', 'Name_1', 'Name_1', 'Name_1', 'Name_1'];
+  Reviews = ['Name_1', 'Name_2', 'Name_3'];
+  viewResume = '';
+  openReport = true;
   constructor(
     private modalService: NgbModal,
   ) { }
@@ -15,6 +18,9 @@ export class ApplicationsComponent implements OnInit {
   ngOnInit() {
   }
   openVerticallyCentered(content) {
-    this.modalService.open(content, { centered: true });
+    this.modalService.open(content, { size: 'lg' });
   }
+  // openModal() {
+  //   $AB('#exampleModal').modal('show');
+  //   }
 }

@@ -26,7 +26,10 @@
     padding-bottom: 10px;
 }
 .p-xs {
-    padding: 5px;
+    padding: 5px !important;
+}
+.p-sm {
+    padding: 10px;
 }
 .p-md {
     padding: 20px;

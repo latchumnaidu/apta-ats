@@ -23,3 +23,86 @@
 .custom-width {
     min-width: 500px;
 }
+.sentMail {
+    top: 50%;
+    left: 60%;
+    transform: translate(-60%, -50%);
+    background: #fefefe;
+}
+.border {
+    box-shadow: 0px 0px 4px 2px rgba(97, 95, 95, 0.85);
+    border-color: white;
+}
+.btn-light {
+    color: #212529;
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+}
+.min-width {
+    min-width: 300px;
+}
+.job-report {
+    h6 {
+        color: #707070;
+    }
+    h4 {
+        color: #707070;
+    }
+}
+.mails {
+    p {
+        font-size: 17px;
+        color: #707070;
+    }
+    h4 {
+        color: #707070;
+        font-size: 17px;
+    }
+    
+}
+.sub-heads {
+    color: #707070;
+    font-size: 18px;
+}
+a {
+    color: #707070;
+    font-size: 14px;
+}
+.f-s-1 {
+    font-size: 1vw;
+}
+.btn-light:not(:disabled):not(.disabled):active {
+    color: #212529;
+    background-color: #a5a9ac;
+    border-color: #a5a9ac;
+}
+.btn-light:focus {
+    background-color: #a5a9ac;
+    border-color: #a5a9ac;
+}
+.progress{
+    width: 60%;
+}
+.table thead th {
+    vertical-align: middle !important;
+    border-bottom: 2px solid #dee2e6;
+    text-align: center;
+    padding-bottom: 10px;
+    font-weight: normal;
+    border-bottom: 2px solid #343a40;
+}
+.table  td:not(:first-child) {
+    vertical-align: middle !important;
+    text-align: center;
+}
+.profile {
+    h6 span {
+        margin-left: 15px;
+    }
+    h6 {
+        margin-bottom: 20px;
+    }
+}
+.videos img {
+    height: 160px;
+}
