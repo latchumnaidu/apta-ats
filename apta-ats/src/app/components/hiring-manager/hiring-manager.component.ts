@@ -3,6 +3,7 @@ import { DataShareService } from 'src/app/data-share.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as $ from 'jquery';
 import { Subscription } from 'rxjs';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 @Component({
   selector: 'app-hiring-manager',
   templateUrl: './hiring-manager.component.html',
@@ -13,7 +14,8 @@ export class HiringManagerComponent implements OnInit, OnDestroy {
   notifications = ['02:19 PM', '03:19 PM', '04:19 PM', '05:19 PM', '06:19 PM', '07:19 PM', ];
   constructor(
     private dataShare: DataShareService,
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal,
     ) { }
 subscription: Subscription;
   ngOnInit() {
@@ -21,6 +23,9 @@ subscription: Subscription;
     this.subscription = this.dataShare.dataSubject.subscribe(res => {
       this.updateProfile = res;
     });
+  }
+  uploadResumes(fileUpload) {
+    this.modalService.open(fileUpload , { centered: true});
   }
   home() {
     this.router.navigate(['./hiring-manager/dashboard']);

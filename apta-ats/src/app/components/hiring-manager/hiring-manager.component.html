@@ -12,7 +12,10 @@
             <div class="col-5 col-lg-4 p-l-r-0 d-flex justify-content-around align-items-center m-r-n text-white">
                 <button class="btn-press nav-button m-r-sm" matBadge="10"
                  matBadgePosition="above after" (click)="inbox()">Inbox</button>
-                <button class="btn-press nav-button">Upload Resumes</button>
+                <button class="btn-press nav-button">
+                    <label for="file_upload" class="m-0">Upload Resumes</label>
+                    <input type="file" class="d-none" id="file_upload">
+                </button>
                 <button class="btn-press nav-button" (click)="postJobs()"> Post Job</button>
                 <mat-icon (click)="home()">home</mat-icon>
                 <div ngbDropdown class="d-inline-block">
@@ -75,6 +78,17 @@
                     </button>
                 </mat-menu>
             </div>
+            <ng-template #fileUpload let-modal>
+                    <div class="modal-body d-flex  justify-content-center align-items-center">
+                        <label for="drop_files" class="d-flex w-100  justify-content-center align-items-center bg-secondary border rounded" >
+                                <img src="../../../assets/cloud-computing.png" >
+                        </label>
+                        <input type="file" class="d-none" id="drop_files">
+                    </div>
+                    <div class="modal-footer justify-content-start ">
+                            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Upload</button>
+                          </div>
+                </ng-template>
         </div>
         <!-- <button class="feedback-button">FeedBack</button> -->
         <div class="row w-100 p-l-r justify-content-between align-items-center" [ngClass]="{'nav-opacity': updateProfile}">

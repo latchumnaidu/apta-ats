@@ -22,6 +22,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { JobsComponent } from './jobs/jobs.component';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { ApplicationsComponent } from './applications/applications.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { ChatboxComponent } from './chatbox/chatbox.component';
 @NgModule({
     declarations: [
         HiringManagerComponent,
@@ -39,7 +41,8 @@ import { ApplicationsComponent } from './applications/applications.component';
         ProfileComponent,
         JobsComponent,
         JobsListComponent,
-        ApplicationsComponent
+        ApplicationsComponent,
+        ChatboxComponent
     ],
     imports: [
         CommonModule,
@@ -51,7 +54,8 @@ import { ApplicationsComponent } from './applications/applications.component';
         DemoMaterialModule,
         AgmCoreModule.forRoot({
             apiKey: ''
-          })
+          }),
+          CKEditorModule
     ]
 })
 export class HiringManagerModule {}

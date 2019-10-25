@@ -1,3 +1,4 @@
+import { ChatboxComponent } from './chatbox/chatbox.component';
 import { ApplicationsComponent } from './applications/applications.component';
 import { JobsListComponent } from './jobs-list/jobs-list.component';
 import { JobsComponent } from './jobs/jobs.component';
@@ -29,6 +30,7 @@ const routes: Routes  = [
         {path: 'jobs', component: JobsListComponent },
         {path: 'applications', component: ApplicationsComponent },
         {path: 'inbox', component: InboxComponent},
+        {path: 'chat-box', component: ChatboxComponent},
         {path: 'give-feedback', component: FeedbackPageComponent},
         {path: 'internalSearch', component: InternalSearchComponent},
         {path: 'template', component: TemplateComponent},

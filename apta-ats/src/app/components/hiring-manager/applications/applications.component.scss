@@ -58,6 +58,9 @@
         color: #707070;
         font-size: 17px;
     }
+    img {
+        cursor: pointer;
+    }
     
 }
 .sub-heads {
@@ -105,4 +108,32 @@ a {
 }
 .videos img {
     height: 160px;
+}
+.close-modal {
+    right: 10px;
+    top: 10px;
+    height: 23px;
+    cursor: pointer;
+}
+::ng-deep mat-form-field input::placeholder {
+    color: #707070 !important;
+}
+::ng-deep .ck-editor__editable_inline {
+    min-height: 150px;
+}
+.invitation {
+    input {
+        border: 0;
+        border-bottom: 2px solid #707070;
+        width: 100%;
+    }
+    label, a {
+        color: #707070;
+    }
+    a {
+        font-size: 12px;
+    }
+    div {
+        color: #707070;
+    }
 }

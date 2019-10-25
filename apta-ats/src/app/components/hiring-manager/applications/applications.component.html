@@ -38,8 +38,9 @@
           </div>
           <ng-template #content let-modal>
             <div class="modal-body">
+              <img src="../../../../assets/close-circular-button-symbol.png" (click)="modal.close('Close click')"  class="position-absolute close-modal">
               <div>
-                <div class="input-group mails p-xs rounded w-80  align-items-center p-xs">
+                <div class="input-group mails p-xs rounded w-70  align-items-center p-xs">
                   <div class="input-group-prepend">
                     <span>TO:</span>
                   </div>
@@ -49,7 +50,7 @@
                   </div>
                 </div>
                 <div class="d-flex justify-content-between ">
-                  <div class="w-80">
+                  <div class="w-70">
                       <div class="input-group p-xs mails rounded align-items-center p-xs">
                           <div class="input-group-prepend">
                             <span>Subject:</span>
@@ -57,9 +58,9 @@
                           <input type="text" class="form-control border-0 search-input" id="exampleInputEmail1">
                         </div>
                   </div>
-                  <div class="w-15">
+                  <div class="w-25">
                       <div class="mails p-xs rounded  d-flex align-items-center justify-content-between">
-                          <img src="../../../../assets/mail-shortcuts/1.png" style="margin-right: 2px;">
+                          <img src="../../../../assets/mail-shortcuts/1.png" style="margin-right: 2px;" (click)="sendInvitation(calendar)">
                           <img src="../../../../assets/mail-shortcuts/2.png">
                           <img src="../../../../assets/mail-shortcuts/3.png">
                           <img src="../../../../assets/mail-shortcuts/4.png">
@@ -67,18 +68,71 @@
                   </div>
                 </div>
                 <h6>Message</h6>
-                <div class="mails rounded">
+                <div class="mails rounded p-0">
 
-                  <textarea rows="6" class="border-0 outline-none w-100"></textarea>
+                  <!-- <textarea rows="6" class="border-0 outline-none w-100"></textarea> -->
+                  <ckeditor [editor]="Editor"   ></ckeditor>
                 </div>
               </div>
             </div>
-            <div class="modal-footer justify-content-start">
+            <div class="modal-footer justify-content-start border-top-0">
               <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Send</button>
               <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Draft</button>
             </div>
           </ng-template>
-          
+          <ng-template #calendar let-modal>
+              <div class="modal-body invitation">
+                <div class="row ">
+                    <div class="col-sm-7">
+                        <h6>Calendar Invitation</h6>
+                        <div class="m-t-sm">
+                          <label class="d-block">Title</label>
+                          <input type="text" class=" outline-none">
+                        </div>
+                        <div class="m-t-sm">
+                            <label class="d-block">Location</label>
+                            <input type="text" class=" outline-none">
+                          </div>
+                          <label class="d-block m-t-sm">Time</label>
+                            <div class="d-flex align-items-center">
+                                <ngb-timepicker class="m-r" [spinners]="spinner"></ngb-timepicker>
+                                <strong class="m-r">To</strong>
+                                <ngb-timepicker  [spinners]="spinner"></ngb-timepicker>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between m-t-sm">
+                                <div class="form-group">
+                                    <label for="exampleFormControlSelect1">Interview Mode</label>
+                                    <select class="form-control" id="exampleFormControlSelect1">
+                                      <option>Online</option>
+                                      <option>Offline</option>
+                                    </select>
+                                  </div>
+                                 <div>
+                                    <label  class="d-block text-center">Schedule For Full Interview</label>
+                                  <div class="text-center">	<mat-icon>add_circle</mat-icon></div>
+                                 </div>
+                            </div>
+                            <textarea placeholder="Type details for this Interview" class="w-100 rounded" rows="5"></textarea>
+                    </div>
+                    <div class="col-sm-4">
+                      <h6>People in the Interview</h6>
+                      <div class="border-left p-l-sm">
+                        <div class="d-flex m-t" *ngFor="let item of Reviews">
+                          <img src="../../../../assets/man.png" class="m-r h-40p">
+                          <div>
+                            <div class="mb-n-xs">{{item}}</div>
+                            <a>Organizer</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer justify-content-start border-top-0">
+                  <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Schedule</button>
+                  <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Cancel</button>
+                </div>
+            </ng-template>
           <div class="row  m-b-xl">
             <div class="col-sm-2 border-right mail-sidebar">
               <!-- <button class="d-flex justify-content-around compose">
@@ -164,7 +218,8 @@
                     <button class="compose"> Submit</button>
                   </div>
                   <div>
-                    <button class="filter rounded-circle d-inline-block percentage">
+                    <button class="filter rounded-circle 
+                    d-inline-block percentage" (click)="chatBox()">
                       <mat-icon class="m-t-xs">question_answer</mat-icon>
                     </button>
                   </div>
@@ -189,7 +244,8 @@
                           </div>
                   </div>
                   <div class="row justify-content-between align-items-center m-t">
-                    <div><button class="filter rounded-circle d-inline-block percentage">
+                    <div><button class="filter rounded-circle 
+                      d-inline-block percentage" (click)="openReport = false">
                         81%
                       </button></div>
                       <div>
@@ -202,7 +258,7 @@
                               <button class="btn btn-light" (click)="viewResume = 'videos'"><img src="../../../../assets/job-reports/5.png"></button>
                               <button class="btn btn-light" (click)="viewResume = 'review'"><img src="../../../../assets/job-reports/6.png"></button>
                           </div>
-                        </div>
+                        </div> 
                       </div>
                       <div class="d-flex justify-content-center align-items-center min-width">
                       <mat-icon class="pointer">calendar_today</mat-icon>
